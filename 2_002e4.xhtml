@@ -132,7 +132,7 @@ symbolic algebra.
 as a simple but unrealistic example of a program that uses generic operations.
 We begin by discussing two plausible representations for complex numbers as
 ordered pairs: rectangular form (real part and imaginary part) and polar form
-(magnitude and angle).<a class="footnote_link" id="DOCF109" href="#FOOT109"><sup>109</sup></a>
+(magnitude and angle).<a class="footnote_link" id="DOCF111" href="#FOOT111"><sup>111</sup></a>
 Section <a href="#g_t2_002e4_002e2">2.4.2</a> will show how both representations can be made to coexist in a
 single system through the use of type tags and generic operations.
 </p>
@@ -533,7 +533,7 @@ the angle <math xmlns="http://www.w3.org/1998/Math/MathML">
     <mi>A</mi>
     <mo stretchy="false">)</mo>
   </mrow>
-</math>.<a class="footnote_link" id="DOCF110" href="#FOOT110"><sup>110</sup></a>  Ben’s
+</math>.<a class="footnote_link" id="DOCF112" href="#FOOT112"><sup>112</sup></a>  Ben’s
 representation is therefore given by the following selectors and constructors:
 </p>
 <div class="lisp">
@@ -924,8 +924,8 @@ Ben needn’t worry about name conflicts with other procedures outside the
 rectangular package.  To interface these to the rest of the system, Ben
 installs his <code>real-part</code> procedure under the operation name
 <code>real-part</code> and the type <code>(rectangular)</code>, and similarly for the other
-selectors.<a class="footnote_link" id="DOCF111" href="#FOOT111"><sup>111</sup></a>  The interface also defines the
-constructors to be used by the external system.<a class="footnote_link" id="DOCF112" href="#FOOT112"><sup>112</sup></a>  These are identical to
+selectors.<a class="footnote_link" id="DOCF113" href="#FOOT113"><sup>113</sup></a>  The interface also defines the
+constructors to be used by the external system.<a class="footnote_link" id="DOCF114" href="#FOOT114"><sup>114</sup></a>  These are identical to
 Ben’s internally defined constructors, except that they attach the tag.
 </p>
 <p>Alyssa’s polar package is analogous:
@@ -966,7 +966,7 @@ no name conflict.
 “operation” procedure called <code>apply-generic</code>, which applies a generic
 operation to some arguments.  <code>Apply-generic</code> looks in the table under the
 name of the operation and the types of the arguments and applies the resulting
-procedure if one is present:<a class="footnote_link" id="DOCF113" href="#FOOT113"><sup>113</sup></a>
+procedure if one is present:<a class="footnote_link" id="DOCF115" href="#FOOT115"><sup>115</sup></a>
 </p>
 <div class="lisp">
 <pre class="lisp prettyprinted" style=""><span class="opn">(</span><span class="kwd">define</span><span class="pln"> </span><span class="opn">(</span><span class="pln">apply-generic op </span><span class="pun">.</span><span class="pln"> args</span><span class="clo">)</span><span class="pln">
@@ -1158,7 +1158,7 @@ operation name and performs the operation indicated.  In such a discipline,
 
 <p>The corresponding <code>apply-generic</code> procedure, which applies a generic
 operation to an argument, now simply feeds the operation’s name to the data
-object and lets the object do the work:<a class="footnote_link" id="DOCF114" href="#FOOT114"><sup>114</sup></a>
+object and lets the object do the work:<a class="footnote_link" id="DOCF116" href="#FOOT116"><sup>116</sup></a>
 </p>
 <div class="lisp">
 <pre class="lisp prettyprinted" style=""><span class="opn">(</span><span class="kwd">define</span><span class="pln"> </span><span class="opn">(</span><span class="pln">apply-generic op arg</span><span class="clo">)</span><span class="pln"> </span><span class="opn">(</span><span class="pln">arg op</span><span class="clo">))</span></pre></div>
@@ -1200,7 +1200,7 @@ operations must often be added?
 <div class="footnote">
 <h4 class="footnotes-heading">Footnotes</h4>
 
-<div id="FOOT109"><p><a class="footnote_backlink" href="#DOCF109"><sup>109</sup></a>
+<div id="FOOT111"><p><a class="footnote_backlink" href="#DOCF111"><sup>111</sup></a>
 In actual computational systems, rectangular
 form is preferable to polar form most of the time because of roundoff errors in
 conversion between rectangular and polar form.  This is why the complex-number
@@ -1208,7 +1208,7 @@ example is unrealistic.  Nevertheless, it provides a clear illustration of the
 design of a system using generic operations and a good introduction to the more
 substantial systems to be developed later in this chapter.</p>
 </div>
-<div id="FOOT110"><p><a class="footnote_backlink" href="#DOCF110"><sup>110</sup></a>
+<div id="FOOT112"><p><a class="footnote_backlink" href="#DOCF112"><sup>112</sup></a>
 The arctangent function referred to here,
 computed by Scheme’s <code>atan</code> procedure, is defined so as to take two
 arguments <math xmlns="http://www.w3.org/1998/Math/MathML">
@@ -1226,17 +1226,17 @@ arguments <math xmlns="http://www.w3.org/1998/Math/MathML">
 </math>.
 The signs of the arguments determine the quadrant of the angle.</p>
 </div>
-<div id="FOOT111"><p><a class="footnote_backlink" href="#DOCF111"><sup>111</sup></a>
+<div id="FOOT113"><p><a class="footnote_backlink" href="#DOCF113"><sup>113</sup></a>
 We use the list <code>(rectangular)</code> rather than the symbol
 <code>rectangular</code> to allow for the possibility of operations with multiple
 arguments, not all of the same type.</p>
 </div>
-<div id="FOOT112"><p><a class="footnote_backlink" href="#DOCF112"><sup>112</sup></a>
+<div id="FOOT114"><p><a class="footnote_backlink" href="#DOCF114"><sup>114</sup></a>
 The type the
 constructors are installed under needn’t be a list because a constructor is
 always used to make an object of one particular type.</p>
 </div>
-<div id="FOOT113"><p><a class="footnote_backlink" href="#DOCF113"><sup>113</sup></a>
+<div id="FOOT115"><p><a class="footnote_backlink" href="#DOCF115"><sup>115</sup></a>
 <code>Apply-generic</code> uses the dotted-tail
 notation described in <a href="2_002e2.xhtml#Exercise-2_002e20">Exercise 2.20</a>, because different generic operations
 may take different numbers of arguments.  In <code>apply-generic</code>, <code>op</code>
@@ -1252,7 +1252,7 @@ procedure, using the elements in the list as arguments.  For example,
 
 <p>returns 10.</p>
 </div>
-<div id="FOOT114"><p><a class="footnote_backlink" href="#DOCF114"><sup>114</sup></a>
+<div id="FOOT116"><p><a class="footnote_backlink" href="#DOCF116"><sup>116</sup></a>
 One limitation of this
 organization is it permits only generic procedures of one argument.</p>
 </div>

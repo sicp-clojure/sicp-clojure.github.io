@@ -206,7 +206,7 @@ result by <math xmlns="http://www.w3.org/1998/Math/MathML">
 observation translates directly into a procedure:
 </p>
 <div class="lisp">
-<pre class="lisp prettyprinted" style=""><span class="opn">(</span><span class="pln">defn factorial </span><span class="pun">[</span><span class="pln">n</span><span class="pun">]</span><span class="pln">
+<pre class="lisp prettyprinted" style=""><span class="opn">(</span><span class="kwd">defn</span><span class="pln"> factorial </span><span class="pun">[</span><span class="pln">n</span><span class="pun">]</span><span class="pln">
   </span><span class="opn">(</span><span class="kwd">if</span><span class="pln"> </span><span class="opn">(</span><span class="pun">=</span><span class="pln"> n </span><span class="lit">1</span><span class="clo">)</span><span class="pln">
     </span><span class="lit">1</span><span class="pln">
     </span><span class="opn">(</span><span class="pun">*</span><span class="pln"> n </span><span class="opn">(</span><span class="pln">factorial </span><span class="opn">(</span><span class="pun">-</span><span class="pln"> n </span><span class="lit">1</span><span class="clo">)))))</span></pre></div>
@@ -263,14 +263,14 @@ exceeds <math xmlns="http://www.w3.org/1998/Math/MathML">
 factorials:<a class="footnote_link" id="DOCF29" href="#FOOT29"><sup>29</sup></a>
 </p>
 <div class="lisp">
-<pre class="lisp prettyprinted" style=""><span class="opn">(</span><span class="pln">defn fact-iter </span><span class="pun">[</span><span class="pln">product counter max-count</span><span class="pun">]</span><span class="pln">
+<pre class="lisp prettyprinted" style=""><span class="opn">(</span><span class="kwd">defn</span><span class="pln"> fact-iter </span><span class="pun">[</span><span class="pln">product counter max-count</span><span class="pun">]</span><span class="pln">
   </span><span class="opn">(</span><span class="kwd">if</span><span class="pln"> </span><span class="opn">(</span><span class="pun">&gt;</span><span class="pln"> counter max-count</span><span class="clo">)</span><span class="pln">
     product
     </span><span class="opn">(</span><span class="pln">fact-iter </span><span class="opn">(</span><span class="pun">*</span><span class="pln"> counter product</span><span class="clo">)</span><span class="pln">
                </span><span class="opn">(</span><span class="pun">+</span><span class="pln"> counter </span><span class="lit">1</span><span class="clo">)</span><span class="pln">
                max-count</span><span class="clo">)))</span><span class="pln">
 
-</span><span class="opn">(</span><span class="pln">defn factorial </span><span class="pun">[</span><span class="pln">n</span><span class="pun">]</span><span class="pln">
+</span><span class="opn">(</span><span class="kwd">defn</span><span class="pln"> factorial </span><span class="pun">[</span><span class="pln">n</span><span class="pun">]</span><span class="pln">
   </span><span class="opn">(</span><span class="pln">fact-iter </span><span class="lit">1</span><span class="pln"> </span><span class="lit">1</span><span class="pln"> n</span><span class="clo">))</span></pre></div>
 
 <p>As before, we can use the substitution model to visualize the process of
@@ -399,12 +399,12 @@ procedures <code>inc</code>, which increments its argument by 1, and <code>dec</
 which decrements its argument by 1.
 </p>
 <div class="lisp">
-<pre class="lisp prettyprinted" style=""><span class="opn">(</span><span class="pln">defn </span><span class="pun">+</span><span class="pln"> </span><span class="pun">[</span><span class="pln">a b</span><span class="pun">]</span><span class="pln">
+<pre class="lisp prettyprinted" style=""><span class="opn">(</span><span class="kwd">defn</span><span class="pln"> </span><span class="pun">+</span><span class="pln"> </span><span class="pun">[</span><span class="pln">a b</span><span class="pun">]</span><span class="pln">
   </span><span class="opn">(</span><span class="kwd">if</span><span class="pln"> </span><span class="opn">(</span><span class="pun">=</span><span class="pln"> a </span><span class="lit">0</span><span class="clo">)</span><span class="pln">
     b
     </span><span class="opn">(</span><span class="pln">inc </span><span class="opn">(</span><span class="pun">+</span><span class="pln"> </span><span class="opn">(</span><span class="pln">dec a</span><span class="clo">)</span><span class="pln"> b</span><span class="clo">))))</span><span class="pln">
 
-</span><span class="opn">(</span><span class="pln">defn </span><span class="pun">+</span><span class="pln"> </span><span class="pun">[</span><span class="pln">a b</span><span class="pun">]</span><span class="pln">
+</span><span class="opn">(</span><span class="kwd">defn</span><span class="pln"> </span><span class="pun">+</span><span class="pln"> </span><span class="pun">[</span><span class="pln">a b</span><span class="pun">]</span><span class="pln">
   </span><span class="opn">(</span><span class="kwd">if</span><span class="pln"> </span><span class="opn">(</span><span class="pun">=</span><span class="pln"> a </span><span class="lit">0</span><span class="clo">)</span><span class="pln">
     b
     </span><span class="opn">(</span><span class="pun">+</span><span class="pln"> </span><span class="opn">(</span><span class="pln">dec a</span><span class="clo">)</span><span class="pln"> </span><span class="opn">(</span><span class="pln">inc b</span><span class="clo">))))</span></pre></div>
@@ -419,7 +419,7 @@ recursive?
 a mathematical function called Ackermann’s function.
 </p>
 <div class="lisp">
-<pre class="lisp prettyprinted" style=""><span class="opn">(</span><span class="pln">defn A </span><span class="pun">[</span><span class="pln">x y</span><span class="pun">]</span><span class="pln">
+<pre class="lisp prettyprinted" style=""><span class="opn">(</span><span class="kwd">defn</span><span class="pln"> A </span><span class="pun">[</span><span class="pln">x y</span><span class="pun">]</span><span class="pln">
   </span><span class="opn">(</span><span class="kwd">cond</span><span class="pln">
     </span><span class="opn">(</span><span class="pun">=</span><span class="pln"> y </span><span class="lit">0</span><span class="clo">)</span><span class="pln"> </span><span class="lit">0</span><span class="pln">
     </span><span class="opn">(</span><span class="pun">=</span><span class="pln"> x </span><span class="lit">0</span><span class="clo">)</span><span class="pln"> </span><span class="opn">(</span><span class="pun">*</span><span class="pln"> </span><span class="lit">2</span><span class="pln"> y</span><span class="clo">)</span><span class="pln">
@@ -438,10 +438,10 @@ a mathematical function called Ackermann’s function.
 defined above:
 </p>
 <div class="lisp">
-<pre class="lisp prettyprinted" style=""><span class="opn">(</span><span class="pln">defn f </span><span class="pun">[</span><span class="pln">n</span><span class="pun">]</span><span class="pln"> </span><span class="opn">(</span><span class="pln">A </span><span class="lit">0</span><span class="pln"> n</span><span class="clo">))</span><span class="pln">
-</span><span class="opn">(</span><span class="pln">defn g </span><span class="pun">[</span><span class="pln">n</span><span class="pun">]</span><span class="pln"> </span><span class="opn">(</span><span class="pln">A </span><span class="lit">1</span><span class="pln"> n</span><span class="clo">))</span><span class="pln">
-</span><span class="opn">(</span><span class="pln">defn h </span><span class="pun">[</span><span class="pln">n</span><span class="pun">]</span><span class="pln"> </span><span class="opn">(</span><span class="pln">A </span><span class="lit">2</span><span class="pln"> n</span><span class="clo">))</span><span class="pln">
-</span><span class="opn">(</span><span class="pln">defn k </span><span class="pun">[</span><span class="pln">n</span><span class="pun">]</span><span class="pln"> </span><span class="opn">(</span><span class="pun">*</span><span class="pln"> </span><span class="lit">5</span><span class="pln"> n n</span><span class="clo">))</span></pre></div>
+<pre class="lisp prettyprinted" style=""><span class="opn">(</span><span class="kwd">defn</span><span class="pln"> f </span><span class="pun">[</span><span class="pln">n</span><span class="pun">]</span><span class="pln"> </span><span class="opn">(</span><span class="pln">A </span><span class="lit">0</span><span class="pln"> n</span><span class="clo">))</span><span class="pln">
+</span><span class="opn">(</span><span class="kwd">defn</span><span class="pln"> g </span><span class="pun">[</span><span class="pln">n</span><span class="pun">]</span><span class="pln"> </span><span class="opn">(</span><span class="pln">A </span><span class="lit">1</span><span class="pln"> n</span><span class="clo">))</span><span class="pln">
+</span><span class="opn">(</span><span class="kwd">defn</span><span class="pln"> h </span><span class="pun">[</span><span class="pln">n</span><span class="pun">]</span><span class="pln"> </span><span class="opn">(</span><span class="pln">A </span><span class="lit">2</span><span class="pln"> n</span><span class="clo">))</span><span class="pln">
+</span><span class="opn">(</span><span class="kwd">defn</span><span class="pln"> k </span><span class="pun">[</span><span class="pln">n</span><span class="pun">]</span><span class="pln"> </span><span class="opn">(</span><span class="pun">*</span><span class="pln"> </span><span class="lit">5</span><span class="pln"> n n</span><span class="clo">))</span></pre></div>
 
 <p>Give concise mathematical definitions for the functions computed by the
 procedures <code>f</code>, <code>g</code>, and <code>h</code> for positive integer values of
@@ -543,7 +543,7 @@ We can immediately translate this definition into a recursive procedure for
 computing Fibonacci numbers:
 </p>
 <div class="lisp">
-<pre class="lisp prettyprinted" style=""><span class="opn">(</span><span class="pln">defn fib </span><span class="pun">[</span><span class="pln">n</span><span class="pun">]</span><span class="pln">
+<pre class="lisp prettyprinted" style=""><span class="opn">(</span><span class="kwd">defn</span><span class="pln"> fib </span><span class="pun">[</span><span class="pln">n</span><span class="pun">]</span><span class="pln">
   </span><span class="opn">(</span><span class="kwd">cond</span><span class="pln">
     </span><span class="opn">(</span><span class="pun">=</span><span class="pln"> n </span><span class="lit">0</span><span class="clo">)</span><span class="pln"> </span><span class="lit">0</span><span class="pln">
     </span><span class="opn">(</span><span class="pun">=</span><span class="pln"> n </span><span class="lit">1</span><span class="clo">)</span><span class="pln"> </span><span class="lit">1</span><span class="pln">
@@ -734,12 +734,12 @@ simultaneous transformations
 the procedure
 </p>
 <div class="lisp">
-<pre class="lisp prettyprinted" style=""><span class="opn">(</span><span class="pln">defn fib-iter </span><span class="pun">[</span><span class="pln">a b count</span><span class="pun">]</span><span class="pln">
+<pre class="lisp prettyprinted" style=""><span class="opn">(</span><span class="kwd">defn</span><span class="pln"> fib-iter </span><span class="pun">[</span><span class="pln">a b count</span><span class="pun">]</span><span class="pln">
   </span><span class="opn">(</span><span class="kwd">if</span><span class="pln"> </span><span class="opn">(</span><span class="pun">=</span><span class="pln"> count </span><span class="lit">0</span><span class="clo">)</span><span class="pln">
     b
     </span><span class="opn">(</span><span class="pln">fib-iter </span><span class="opn">(</span><span class="pun">+</span><span class="pln"> a b</span><span class="clo">)</span><span class="pln"> a </span><span class="opn">(</span><span class="pun">-</span><span class="pln"> count </span><span class="lit">1</span><span class="clo">))))</span><span class="pln">
 
-</span><span class="opn">(</span><span class="pln">defn fib </span><span class="pun">[</span><span class="pln">n</span><span class="pun">]</span><span class="pln">
+</span><span class="opn">(</span><span class="kwd">defn</span><span class="pln"> fib </span><span class="pun">[</span><span class="pln">n</span><span class="pun">]</span><span class="pln">
   </span><span class="opn">(</span><span class="pln">fib-iter </span><span class="lit">1</span><span class="pln"> </span><span class="lit">0</span><span class="pln"> n</span><span class="clo">))</span></pre></div>
 
 <p>This second method for computing <math xmlns="http://www.w3.org/1998/Math/MathML">
@@ -848,7 +848,7 @@ an algorithm if we specify the following degenerate cases:<a class="footnote_lin
 </p>
 <div class="lisp">
 <pre class="lisp prettyprinted" style=""><span class="pln">
-</span><span class="opn">(</span><span class="pln">defn first-denomination </span><span class="pun">[</span><span class="pln">kinds-of-coins</span><span class="pun">]</span><span class="pln">
+</span><span class="opn">(</span><span class="kwd">defn</span><span class="pln"> first-denomination </span><span class="pun">[</span><span class="pln">kinds-of-coins</span><span class="pun">]</span><span class="pln">
   </span><span class="opn">(</span><span class="kwd">cond</span><span class="pln">
     </span><span class="opn">(</span><span class="pun">=</span><span class="pln"> kinds-of-coins </span><span class="lit">1</span><span class="clo">)</span><span class="pln"> </span><span class="lit">1</span><span class="pln">
     </span><span class="opn">(</span><span class="pun">=</span><span class="pln"> kinds-of-coins </span><span class="lit">2</span><span class="clo">)</span><span class="pln"> </span><span class="lit">5</span><span class="pln">
@@ -856,7 +856,7 @@ an algorithm if we specify the following degenerate cases:<a class="footnote_lin
     </span><span class="opn">(</span><span class="pun">=</span><span class="pln"> kinds-of-coins </span><span class="lit">4</span><span class="clo">)</span><span class="pln"> </span><span class="lit">25</span><span class="pln">
     </span><span class="opn">(</span><span class="pun">=</span><span class="pln"> kinds-of-coins </span><span class="lit">5</span><span class="clo">)</span><span class="pln"> </span><span class="lit">50</span><span class="clo">))</span><span class="pln">
 
-</span><span class="opn">(</span><span class="pln">defn cc </span><span class="pun">[</span><span class="pln">amount kinds-of-coins</span><span class="pun">]</span><span class="pln">
+</span><span class="opn">(</span><span class="kwd">defn</span><span class="pln"> cc </span><span class="pun">[</span><span class="pln">amount kinds-of-coins</span><span class="pun">]</span><span class="pln">
   </span><span class="opn">(</span><span class="kwd">cond</span><span class="pln">
     </span><span class="opn">(</span><span class="pun">=</span><span class="pln"> amount </span><span class="lit">0</span><span class="clo">)</span><span class="pln"> </span><span class="lit">1</span><span class="pln">
     </span><span class="opn">(</span><span class="kwd">or</span><span class="pln"> </span><span class="opn">(</span><span class="pun">&lt;</span><span class="pln"> amount </span><span class="lit">0</span><span class="clo">)</span><span class="pln">
@@ -868,7 +868,7 @@ an algorithm if we specify the following degenerate cases:<a class="footnote_lin
                         kinds-of-coins</span><span class="clo">))</span><span class="pln">
                 kinds-of-coins</span><span class="clo">))))</span><span class="pln">
 
-</span><span class="opn">(</span><span class="pln">defn count-change </span><span class="pun">[</span><span class="pln">amount</span><span class="pun">]</span><span class="pln">
+</span><span class="opn">(</span><span class="kwd">defn</span><span class="pln"> count-change </span><span class="pun">[</span><span class="pln">amount</span><span class="pun">]</span><span class="pln">
   </span><span class="opn">(</span><span class="pln">cc amount </span><span class="lit">5</span><span class="clo">))</span></pre></div>
 
 <p>(The <code>first-denomination</code> procedure takes as input the number of kinds of
@@ -1422,9 +1422,9 @@ greater than 0.1 radians.) These ideas are incorporated in the following
 procedures:
 </p>
 <div class="lisp">
-<pre class="lisp prettyprinted" style=""><span class="opn">(</span><span class="pln">defn cube </span><span class="pun">[</span><span class="pln">x</span><span class="pun">]</span><span class="pln"> </span><span class="opn">(</span><span class="pun">*</span><span class="pln"> x x x</span><span class="clo">))</span><span class="pln">
-</span><span class="opn">(</span><span class="pln">defn p </span><span class="pun">[</span><span class="pln">x</span><span class="pun">]</span><span class="pln"> </span><span class="opn">(</span><span class="pun">-</span><span class="pln"> </span><span class="opn">(</span><span class="pun">*</span><span class="pln"> </span><span class="lit">3</span><span class="pln"> x</span><span class="clo">)</span><span class="pln"> </span><span class="opn">(</span><span class="pun">*</span><span class="pln"> </span><span class="lit">4</span><span class="pln"> </span><span class="opn">(</span><span class="pln">cube x</span><span class="clo">))))</span><span class="pln">
-</span><span class="opn">(</span><span class="pln">defn sine </span><span class="pun">[</span><span class="pln">angle</span><span class="pun">]</span><span class="pln">
+<pre class="lisp prettyprinted" style=""><span class="opn">(</span><span class="kwd">defn</span><span class="pln"> cube </span><span class="pun">[</span><span class="pln">x</span><span class="pun">]</span><span class="pln"> </span><span class="opn">(</span><span class="pun">*</span><span class="pln"> x x x</span><span class="clo">))</span><span class="pln">
+</span><span class="opn">(</span><span class="kwd">defn</span><span class="pln"> p </span><span class="pun">[</span><span class="pln">x</span><span class="pun">]</span><span class="pln"> </span><span class="opn">(</span><span class="pun">-</span><span class="pln"> </span><span class="opn">(</span><span class="pun">*</span><span class="pln"> </span><span class="lit">3</span><span class="pln"> x</span><span class="clo">)</span><span class="pln"> </span><span class="opn">(</span><span class="pun">*</span><span class="pln"> </span><span class="lit">4</span><span class="pln"> </span><span class="opn">(</span><span class="pln">cube x</span><span class="clo">))))</span><span class="pln">
+</span><span class="opn">(</span><span class="kwd">defn</span><span class="pln"> sine </span><span class="pun">[</span><span class="pln">angle</span><span class="pun">]</span><span class="pln">
    </span><span class="opn">(</span><span class="kwd">if</span><span class="pln"> </span><span class="opn">(</span><span class="pln">not </span><span class="opn">(</span><span class="pun">&gt;</span><span class="pln"> </span><span class="opn">(</span><span class="pln">abs angle</span><span class="clo">)</span><span class="pln"> </span><span class="lit">0.1</span><span class="clo">))</span><span class="pln">
        angle
        </span><span class="opn">(</span><span class="pln">p </span><span class="opn">(</span><span class="pln">sine </span><span class="opn">(</span><span class="pun">/</span><span class="pln"> angle </span><span class="lit">3.0</span><span class="clo">)))))</span></pre></div>
@@ -1503,7 +1503,7 @@ recursive definition
 which translates readily into the procedure
 </p>
 <div class="lisp">
-<pre class="lisp prettyprinted" style=""><span class="opn">(</span><span class="pln">defn expt </span><span class="pun">[</span><span class="pln">b n</span><span class="pun">]</span><span class="pln">
+<pre class="lisp prettyprinted" style=""><span class="opn">(</span><span class="kwd">defn</span><span class="pln"> expt </span><span class="pun">[</span><span class="pln">b n</span><span class="pun">]</span><span class="pln">
   </span><span class="opn">(</span><span class="kwd">if</span><span class="pln"> </span><span class="opn">(</span><span class="pun">=</span><span class="pln"> n </span><span class="lit">0</span><span class="clo">)</span><span class="pln">
       </span><span class="lit">1</span><span class="pln">
       </span><span class="opn">(</span><span class="pun">*</span><span class="pln"> b </span><span class="opn">(</span><span class="pln">expt b </span><span class="opn">(</span><span class="pun">-</span><span class="pln"> n </span><span class="lit">1</span><span class="clo">)))))</span></pre></div>
@@ -1527,14 +1527,14 @@ which translates readily into the procedure
 equivalent linear iteration:
 </p>
 <div class="lisp">
-<pre class="lisp prettyprinted" style=""><span class="opn">(</span><span class="pln">defn expt-iter </span><span class="pun">[</span><span class="pln">b counter product</span><span class="pun">]</span><span class="pln">
+<pre class="lisp prettyprinted" style=""><span class="opn">(</span><span class="kwd">defn</span><span class="pln"> expt-iter </span><span class="pun">[</span><span class="pln">b counter product</span><span class="pun">]</span><span class="pln">
   </span><span class="opn">(</span><span class="kwd">if</span><span class="pln"> </span><span class="opn">(</span><span class="pun">=</span><span class="pln"> counter </span><span class="lit">0</span><span class="clo">)</span><span class="pln">
       product
       </span><span class="opn">(</span><span class="pln">expt-iter b
                  </span><span class="opn">(</span><span class="pun">-</span><span class="pln"> counter </span><span class="lit">1</span><span class="clo">)</span><span class="pln">
                  </span><span class="opn">(</span><span class="pun">*</span><span class="pln"> b product</span><span class="clo">))))</span><span class="pln">
 
-</span><span class="opn">(</span><span class="pln">defn expt </span><span class="pun">[</span><span class="pln">b n</span><span class="pun">]</span><span class="pln">
+</span><span class="opn">(</span><span class="kwd">defn</span><span class="pln"> expt </span><span class="pun">[</span><span class="pln">b n</span><span class="pun">]</span><span class="pln">
   </span><span class="opn">(</span><span class="pln">expt-iter b n </span><span class="lit">1</span><span class="clo">))</span></pre></div>
 
 <p>This version requires <math xmlns="http://www.w3.org/1998/Math/MathML">
@@ -1737,7 +1737,7 @@ the rule
 We can express this method as a procedure:
 </p>
 <div class="lisp">
-<pre class="lisp prettyprinted" style=""><span class="opn">(</span><span class="pln">defn fast-expt </span><span class="pun">[</span><span class="pln">b n</span><span class="pun">]</span><span class="pln">
+<pre class="lisp prettyprinted" style=""><span class="opn">(</span><span class="kwd">defn</span><span class="pln"> fast-expt </span><span class="pun">[</span><span class="pln">b n</span><span class="pun">]</span><span class="pln">
   </span><span class="opn">(</span><span class="kwd">cond</span><span class="pln">
     </span><span class="opn">(</span><span class="pun">=</span><span class="pln"> n </span><span class="lit">0</span><span class="clo">)</span><span class="pln">
       </span><span class="lit">1</span><span class="pln">
@@ -1750,7 +1750,7 @@ We can express this method as a procedure:
 the primitive procedure <code>remainder</code> by
 </p>
 <div class="lisp">
-<pre class="lisp prettyprinted" style=""><span class="opn">(</span><span class="pln">defn even? </span><span class="pun">[</span><span class="pln">n</span><span class="pun">]</span><span class="pln">
+<pre class="lisp prettyprinted" style=""><span class="opn">(</span><span class="kwd">defn</span><span class="pln"> even? </span><span class="pun">[</span><span class="pln">n</span><span class="pun">]</span><span class="pln">
   </span><span class="opn">(</span><span class="pun">=</span><span class="pln"> </span><span class="opn">(</span><span class="pln">rem n </span><span class="lit">2</span><span class="clo">)</span><span class="pln"> </span><span class="lit">0</span><span class="clo">))</span></pre></div>
 
 <p>The process evolved by <code>fast-expt</code> grows logarithmically with <math xmlns="http://www.w3.org/1998/Math/MathML">
@@ -1897,7 +1897,7 @@ it is assumed that our language can only add, not multiply) is analogous to the
 <code>expt</code> procedure:
 </p>
 <div class="lisp">
-<pre class="lisp prettyprinted" style=""><span class="opn">(</span><span class="pln">defn </span><span class="pun">*</span><span class="pln"> </span><span class="pun">[</span><span class="pln">a b</span><span class="pun">]</span><span class="pln">
+<pre class="lisp prettyprinted" style=""><span class="opn">(</span><span class="kwd">defn</span><span class="pln"> </span><span class="pun">*</span><span class="pln"> </span><span class="pun">[</span><span class="pln">a b</span><span class="pun">]</span><span class="pln">
   </span><span class="opn">(</span><span class="kwd">if</span><span class="pln"> </span><span class="opn">(</span><span class="pun">=</span><span class="pln"> b </span><span class="lit">0</span><span class="clo">)</span><span class="pln">
     </span><span class="lit">0</span><span class="pln">
     </span><span class="opn">(</span><span class="pun">+</span><span class="pln"> a </span><span class="opn">(</span><span class="pun">*</span><span class="pln"> a </span><span class="opn">(</span><span class="pun">-</span><span class="pln"> b </span><span class="lit">1</span><span class="clo">)))))</span></pre></div>
@@ -2098,7 +2098,7 @@ procedure.  Put this all together to complete the following procedure, which
 runs in a logarithmic number of steps:<a class="footnote_link" id="DOCF41" href="#FOOT41"><sup>41</sup></a>
 </p>
 <div class="lisp">
-<pre class="lisp prettyprinted" style=""><span class="opn">(</span><span class="pln">defn fib-iter </span><span class="pun">[</span><span class="pln">a b p q count</span><span class="pun">]</span><span class="pln">
+<pre class="lisp prettyprinted" style=""><span class="opn">(</span><span class="kwd">defn</span><span class="pln"> fib-iter </span><span class="pun">[</span><span class="pln">a b p q count</span><span class="pun">]</span><span class="pln">
   </span><span class="opn">(</span><span class="kwd">cond</span><span class="pln">
     </span><span class="opn">(</span><span class="pun">=</span><span class="pln"> count </span><span class="lit">0</span><span class="clo">)</span><span class="pln">
       b
@@ -2118,7 +2118,7 @@ runs in a logarithmic number of steps:<a class="footnote_link" id="DOCF41" href=
                 q
                 </span><span class="opn">(</span><span class="pun">-</span><span class="pln"> count </span><span class="lit">1</span><span class="clo">))))</span><span class="pln">
 
-</span><span class="opn">(</span><span class="pln">defn fib </span><span class="pun">[</span><span class="pln">n</span><span class="pun">]</span><span class="pln">
+</span><span class="opn">(</span><span class="kwd">defn</span><span class="pln"> fib </span><span class="pun">[</span><span class="pln">n</span><span class="pun">]</span><span class="pln">
   </span><span class="opn">(</span><span class="pln">fib-iter </span><span class="lit">1</span><span class="pln"> </span><span class="lit">0</span><span class="pln"> </span><span class="lit">0</span><span class="pln"> </span><span class="lit">1</span><span class="pln"> n</span><span class="clo">))</span></pre></div>
 </blockquote>
 
@@ -2189,7 +2189,7 @@ method for computing the <abbr>GCD</abbr> is known as
 <p>It is easy to express Euclid’s Algorithm as a procedure:
 </p>
 <div class="lisp">
-<pre class="lisp prettyprinted" style=""><span class="opn">(</span><span class="pln">defn gcd </span><span class="pun">[</span><span class="pln">a b</span><span class="pun">]</span><span class="pln">
+<pre class="lisp prettyprinted" style=""><span class="opn">(</span><span class="kwd">defn</span><span class="pln"> gcd </span><span class="pun">[</span><span class="pln">a b</span><span class="pun">]</span><span class="pln">
   </span><span class="opn">(</span><span class="kwd">if</span><span class="pln"> </span><span class="opn">(</span><span class="pun">=</span><span class="pln"> b </span><span class="lit">0</span><span class="clo">)</span><span class="pln">
     a
     </span><span class="opn">(</span><span class="pln">gcd b </span><span class="opn">(</span><span class="pln">rem a b</span><span class="clo">))))</span></pre></div>
@@ -2322,10 +2322,10 @@ straightforward way, by testing <math xmlns="http://www.w3.org/1998/Math/MathML"
 starting with 2.
 </p>
 <div class="lisp">
-<pre class="lisp prettyprinted" style=""><span class="opn">(</span><span class="pln">defn divides? </span><span class="pun">[</span><span class="pln">a b</span><span class="pun">]</span><span class="pln">
+<pre class="lisp prettyprinted" style=""><span class="opn">(</span><span class="kwd">defn</span><span class="pln"> divides? </span><span class="pun">[</span><span class="pln">a b</span><span class="pun">]</span><span class="pln">
   </span><span class="opn">(</span><span class="pun">=</span><span class="pln"> </span><span class="opn">(</span><span class="pln">rem b a</span><span class="clo">)</span><span class="pln"> </span><span class="lit">0</span><span class="clo">))</span><span class="pln">
 
-</span><span class="opn">(</span><span class="pln">defn find-divisor </span><span class="pun">[</span><span class="pln">n test-divisor</span><span class="pun">]</span><span class="pln">
+</span><span class="opn">(</span><span class="kwd">defn</span><span class="pln"> find-divisor </span><span class="pun">[</span><span class="pln">n test-divisor</span><span class="pun">]</span><span class="pln">
   </span><span class="opn">(</span><span class="kwd">cond</span><span class="pln">
     </span><span class="opn">(</span><span class="pun">&gt;</span><span class="pln"> </span><span class="opn">(</span><span class="pln">square test-divisor</span><span class="clo">)</span><span class="pln"> n</span><span class="clo">)</span><span class="pln">
       n
@@ -2336,7 +2336,7 @@ starting with 2.
           n
           </span><span class="opn">(</span><span class="pun">+</span><span class="pln"> test-divisor </span><span class="lit">1</span><span class="clo">))))</span><span class="pln">
 
-</span><span class="opn">(</span><span class="pln">defn smallest-divisor </span><span class="pun">[</span><span class="pln">n</span><span class="pun">]</span><span class="pln">
+</span><span class="opn">(</span><span class="kwd">defn</span><span class="pln"> smallest-divisor </span><span class="pun">[</span><span class="pln">n</span><span class="pun">]</span><span class="pln">
   </span><span class="opn">(</span><span class="pln">find-divisor n </span><span class="lit">2</span><span class="clo">))</span></pre></div>
 
 <p>We can test whether a number is prime as follows: <math xmlns="http://www.w3.org/1998/Math/MathML">
@@ -2347,7 +2347,7 @@ starting with 2.
 </math> is its own smallest divisor.
 </p>
 <div class="lisp">
-<pre class="lisp prettyprinted" style=""><span class="opn">(</span><span class="pln">defn prime? </span><span class="pun">[</span><span class="pln">n</span><span class="pun">]</span><span class="pln">
+<pre class="lisp prettyprinted" style=""><span class="opn">(</span><span class="kwd">defn</span><span class="pln"> prime? </span><span class="pun">[</span><span class="pln">n</span><span class="pun">]</span><span class="pln">
   </span><span class="opn">(</span><span class="pun">=</span><span class="pln"> n </span><span class="opn">(</span><span class="pln">smallest-divisor n</span><span class="clo">)))</span></pre></div>
 
 <p>The end test for <code>find-divisor</code> is based on the fact that if <math xmlns="http://www.w3.org/1998/Math/MathML">
@@ -2495,7 +2495,7 @@ Fermat test.
 of a number modulo another number:
 </p>
 <div class="lisp">
-<pre class="lisp prettyprinted" style=""><span class="opn">(</span><span class="pln">defn expmod </span><span class="pun">[</span><span class="pln">base exp m</span><span class="pun">]</span><span class="pln">
+<pre class="lisp prettyprinted" style=""><span class="opn">(</span><span class="kwd">defn</span><span class="pln"> expmod </span><span class="pun">[</span><span class="pln">base exp m</span><span class="pun">]</span><span class="pln">
   </span><span class="opn">(</span><span class="kwd">cond</span><span class="pln">
     </span><span class="opn">(</span><span class="pun">=</span><span class="pln"> exp </span><span class="lit">0</span><span class="clo">)</span><span class="pln"> </span><span class="lit">1</span><span class="pln">
     </span><span class="opn">(</span><span class="pln">even? exp</span><span class="clo">)</span><span class="pln">
@@ -2555,10 +2555,10 @@ input.  Hence, to obtain a random number between 1 and <math xmlns="http://www.w
 </math> and add 1 to the result:
 </p>
 <div class="lisp">
-<pre class="lisp prettyprinted" style=""><span class="opn">(</span><span class="pln">defn fermat-test </span><span class="pun">[</span><span class="pln">n</span><span class="pun">]</span><span class="pln">
-  </span><span class="opn">(</span><span class="pln">defn random </span><span class="pun">[</span><span class="pln">m</span><span class="pun">]</span><span class="pln">
+<pre class="lisp prettyprinted" style=""><span class="opn">(</span><span class="kwd">defn</span><span class="pln"> fermat-test </span><span class="pun">[</span><span class="pln">n</span><span class="pun">]</span><span class="pln">
+  </span><span class="opn">(</span><span class="kwd">defn</span><span class="pln"> random </span><span class="pun">[</span><span class="pln">m</span><span class="pun">]</span><span class="pln">
     </span><span class="opn">(</span><span class="pln">int </span><span class="opn">(</span><span class="pun">*</span><span class="pln"> m </span><span class="opn">(</span><span class="pln">rand</span><span class="clo">))))</span><span class="pln">
-  </span><span class="opn">(</span><span class="pln">defn try-it </span><span class="pun">[</span><span class="pln">a</span><span class="pun">]</span><span class="pln">
+  </span><span class="opn">(</span><span class="kwd">defn</span><span class="pln"> try-it </span><span class="pun">[</span><span class="pln">a</span><span class="pun">]</span><span class="pln">
     </span><span class="opn">(</span><span class="pun">=</span><span class="pln"> </span><span class="opn">(</span><span class="pln">expmod a n n</span><span class="clo">)</span><span class="pln"> a</span><span class="clo">))</span><span class="pln">
   </span><span class="opn">(</span><span class="pln">try-it </span><span class="opn">(</span><span class="pun">+</span><span class="pln"> </span><span class="lit">1</span><span class="pln"> </span><span class="opn">(</span><span class="pln">random </span><span class="opn">(</span><span class="pun">-</span><span class="pln"> n </span><span class="lit">1</span><span class="clo">)))))</span></pre></div>
 
@@ -2567,7 +2567,7 @@ a parameter.  Its value is true if the test succeeds every time, and false
 otherwise.
 </p>
 <div class="lisp">
-<pre class="lisp prettyprinted" style=""><span class="opn">(</span><span class="pln">defn fast-prime? </span><span class="pun">[</span><span class="pln">n times</span><span class="pun">]</span><span class="pln">
+<pre class="lisp prettyprinted" style=""><span class="opn">(</span><span class="kwd">defn</span><span class="pln"> fast-prime? </span><span class="pun">[</span><span class="pln">n times</span><span class="pun">]</span><span class="pln">
   </span><span class="opn">(</span><span class="kwd">cond</span><span class="pln">
     </span><span class="opn">(</span><span class="pun">=</span><span class="pln"> times </span><span class="lit">0</span><span class="clo">)</span><span class="pln"> true
     </span><span class="opn">(</span><span class="pln">fermat-test n</span><span class="clo">)</span><span class="pln">
@@ -2691,7 +2691,7 @@ microseconds).  The following procedure defines <code>runtime</code> in Clojure
 which returns the current time in nano seconds.
 </p>
 <div class="lisp">
-<pre class="lisp prettyprinted" style=""><span class="opn">(</span><span class="pln">defn runtime </span><span class="pun">[]</span><span class="pln"> </span><span class="opn">(</span><span class="pln">System</span><span class="pun">/</span><span class="pln">nanoTime</span><span class="clo">))</span></pre></div>
+<pre class="lisp prettyprinted" style=""><span class="opn">(</span><span class="kwd">defn</span><span class="pln"> runtime </span><span class="pun">[]</span><span class="pln"> </span><span class="opn">(</span><span class="pln">System</span><span class="pun">/</span><span class="pln">nanoTime</span><span class="clo">))</span></pre></div>
 
 <p>The following <code>timed-prime-test</code> procedure, when called with an integer
 <math xmlns="http://www.w3.org/1998/Math/MathML">
@@ -2707,16 +2707,16 @@ is prime, the procedure prints three asterisks followed by the amount of time
 used in performing the test.
 </p>
 <div class="lisp">
-<pre class="lisp prettyprinted" style=""><span class="opn">(</span><span class="pln">defn report-prime </span><span class="pun">[</span><span class="pln">elapsed-time</span><span class="pun">]</span><span class="pln">
+<pre class="lisp prettyprinted" style=""><span class="opn">(</span><span class="kwd">defn</span><span class="pln"> report-prime </span><span class="pun">[</span><span class="pln">elapsed-time</span><span class="pun">]</span><span class="pln">
   </span><span class="opn">(</span><span class="pln">print </span><span class="str">" *** "</span><span class="clo">)</span><span class="pln">
   </span><span class="opn">(</span><span class="pln">println elapsed-time</span><span class="clo">))</span><span class="pln">
 
-</span><span class="opn">(</span><span class="pln">defn start-prime-test </span><span class="pun">[</span><span class="pln">n start-time</span><span class="pun">]</span><span class="pln">
+</span><span class="opn">(</span><span class="kwd">defn</span><span class="pln"> start-prime-test </span><span class="pun">[</span><span class="pln">n start-time</span><span class="pun">]</span><span class="pln">
   </span><span class="opn">(</span><span class="kwd">if</span><span class="pln"> </span><span class="opn">(</span><span class="pln">prime? n</span><span class="clo">)</span><span class="pln">
       </span><span class="opn">(</span><span class="pln">report-prime </span><span class="opn">(</span><span class="pun">-</span><span class="pln"> </span><span class="opn">(</span><span class="pln">runtime</span><span class="clo">)</span><span class="pln">
                        start-time</span><span class="clo">))))</span><span class="pln">
 
-</span><span class="opn">(</span><span class="pln">defn timed-prime-test </span><span class="pun">[</span><span class="pln">n</span><span class="pun">]</span><span class="pln">
+</span><span class="opn">(</span><span class="kwd">defn</span><span class="pln"> timed-prime-test </span><span class="pun">[</span><span class="pln">n</span><span class="pun">]</span><span class="pln">
   </span><span class="opn">(</span><span class="pln">newline</span><span class="clo">)</span><span class="pln">
   </span><span class="opn">(</span><span class="pln">print n</span><span class="clo">)</span><span class="pln">
   </span><span class="opn">(</span><span class="pln">start-prime-test n </span><span class="opn">(</span><span class="pln">runtime</span><span class="clo">)))</span></pre></div>
@@ -2799,7 +2799,7 @@ we went to a lot of extra work in writing <code>expmod</code>.  After all, she s
 since we already know how to compute exponentials, we could have simply written
 </p>
 <div class="lisp">
-<pre class="lisp prettyprinted" style=""><span class="opn">(</span><span class="pln">defn expmod </span><span class="pun">[</span><span class="pln">base exp m</span><span class="pun">]</span><span class="pln">
+<pre class="lisp prettyprinted" style=""><span class="opn">(</span><span class="kwd">defn</span><span class="pln"> expmod </span><span class="pun">[</span><span class="pln">base exp m</span><span class="pun">]</span><span class="pln">
   </span><span class="opn">(</span><span class="pln">rem </span><span class="opn">(</span><span class="pln">fast-expt base exp</span><span class="clo">)</span><span class="pln"> m</span><span class="clo">))</span></pre></div>
 
 <p>Is she correct?  Would this procedure serve as well for our fast prime tester?
@@ -2815,7 +2815,7 @@ the <code>expmod</code> procedure to use an explicit multiplication, rather than
 calling <code>square</code>:
 </p>
 <div class="lisp">
-<pre class="lisp prettyprinted" style=""><span class="opn">(</span><span class="pln">defn expmod </span><span class="pun">[</span><span class="pln">base exp m</span><span class="pun">]</span><span class="pln">
+<pre class="lisp prettyprinted" style=""><span class="opn">(</span><span class="kwd">defn</span><span class="pln"> expmod </span><span class="pun">[</span><span class="pln">base exp m</span><span class="pun">]</span><span class="pln">
   </span><span class="opn">(</span><span class="kwd">cond</span><span class="pln">
     </span><span class="opn">(</span><span class="pun">=</span><span class="pln"> exp </span><span class="lit">0</span><span class="clo">)</span><span class="pln"> </span><span class="lit">1</span><span class="pln">
     </span><span class="opn">(</span><span class="pln">even? exp</span><span class="clo">)</span><span class="pln">
@@ -2979,8 +2979,8 @@ structure introduced in the last section to hide the definition of
 <code>fact-iter</code>:
 </p>
 <div class="lisp">
-<pre class="lisp prettyprinted" style=""><span class="opn">(</span><span class="pln">defn factorial </span><span class="pun">[</span><span class="pln">n</span><span class="pun">]</span><span class="pln">
-  </span><span class="opn">(</span><span class="pln">defn fact-iter </span><span class="pun">[</span><span class="pln">product counter</span><span class="pun">]</span><span class="pln">
+<pre class="lisp prettyprinted" style=""><span class="opn">(</span><span class="kwd">defn</span><span class="pln"> factorial </span><span class="pun">[</span><span class="pln">n</span><span class="pun">]</span><span class="pln">
+  </span><span class="opn">(</span><span class="kwd">defn</span><span class="pln"> fact-iter </span><span class="pun">[</span><span class="pln">product counter</span><span class="pun">]</span><span class="pln">
     </span><span class="opn">(</span><span class="kwd">if</span><span class="pln"> </span><span class="opn">(</span><span class="pun">&gt;</span><span class="pln"> counter n</span><span class="clo">)</span><span class="pln">
       product
       </span><span class="opn">(</span><span class="pln">fact-iter </span><span class="opn">(</span><span class="pun">*</span><span class="pln"> counter product</span><span class="clo">)</span><span class="pln">

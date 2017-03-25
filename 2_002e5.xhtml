@@ -355,7 +355,7 @@ we can support them without seriously violating our module boundaries.
 each possible combination of types for which the operation is valid.  For
 example, we could extend the complex-number package so that it provides a
 procedure for adding complex numbers to ordinary numbers and installs this in
-the table using the tag <code>(complex scheme-number)</code>:<a class="footnote_link" id="DOCF115" href="#FOOT115"><sup>115</sup></a>
+the table using the tag <code>(complex scheme-number)</code>:<a class="footnote_link" id="DOCF117" href="#FOOT117"><sup>117</sup></a>
 </p>
 <div class="lisp">
 <pre class="lisp prettyprinted" style=""><span class="opn">(</span><span class="kwd">define</span><span class="pln"> </span><span class="opn">(</span><span class="pln">add-complex-to-schemenum z x</span><span class="clo">)</span><span class="pln">
@@ -431,7 +431,7 @@ When asked to apply an operation, we first check whether the operation is
 defined for the arguments’ types, just as before.  If so, we dispatch to the
 procedure found in the operation-and-type table.  Otherwise, we try coercion.
 For simplicity, we consider only the case where there are two
-arguments.<a class="footnote_link" id="DOCF116" href="#FOOT116"><sup>116</sup></a>  We check the
+arguments.<a class="footnote_link" id="DOCF118" href="#FOOT118"><sup>118</sup></a>  We check the
 coercion table to see if objects of the first type can be coerced to the second
 type.  If so, we coerce the first argument and try the operation again.  If
 objects of the first type cannot in general be coerced to the second type, we
@@ -486,7 +486,7 @@ system with <math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>n</mi>
 </math> types), we need to write only one procedure for each pair of
 types rather than a different procedure for each collection of types and each
-generic operation.<a class="footnote_link" id="DOCF117" href="#FOOT117"><sup>117</sup></a>  What we are counting on here is the fact
+generic operation.<a class="footnote_link" id="DOCF119" href="#FOOT119"><sup>119</sup></a>  What we are counting on here is the fact
 that the appropriate transformation between types depends only on the types
 themselves, not on the operation to be applied.
 </p>
@@ -623,7 +623,7 @@ of a procedure such as <code>apply-generic</code>.  Since there generally are
 multiple subtypes for a type, there is a similar problem in coercing a value
 “down” the type hierarchy.  Dealing with large numbers of interrelated types
 while still preserving modularity in the design of large systems is very
-difficult, and is an area of much current research.<a class="footnote_link" id="DOCF118" href="#FOOT118"><sup>118</sup></a>
+difficult, and is an area of much current research.<a class="footnote_link" id="DOCF120" href="#FOOT120"><sup>120</sup></a>
 </p>
 <figure class="float">
 <a id="Figure-2_002e26"></a>
@@ -754,7 +754,7 @@ when we <code>project</code> it and <code>raise</code> the result back to the ty
 started with, we end up with something equal to what we started with.  Show how
 to implement this idea in detail, by writing a <code>drop</code> procedure that drops
 an object as far as possible.  You will need to design the various projection
-operations<a class="footnote_link" id="DOCF119" href="#FOOT119"><sup>119</sup></a> and
+operations<a class="footnote_link" id="DOCF121" href="#FOOT121"><sup>121</sup></a> and
 install <code>project</code> as a generic operation in the system.  You will also
 need to make use of a generic equality predicate, such as described in
 <a href="#Exercise-2_002e79">Exercise 2.79</a>.  Finally, use <code>drop</code> to rewrite <code>apply-generic</code>
@@ -853,7 +853,7 @@ relative to certain variables (the <a id="index-indeterminates"></a>
 <em>indeterminates</em> of the polynomial).
 For simplicity, we will restrict ourselves to polynomials having just one
 indeterminate (<a id="index-univariate-polynomials"></a>
-<em>univariate polynomials</em>).<a class="footnote_link" id="DOCF120" href="#FOOT120"><sup>120</sup></a> We will define a polynomial to be a sum of terms, each of
+<em>univariate polynomials</em>).<a class="footnote_link" id="DOCF122" href="#FOOT122"><sup>122</sup></a> We will define a polynomial to be a sum of terms, each of
 which is either a coefficient, a power of the indeterminate, or a product of a
 coefficient and a power of the indeterminate.  A coefficient is defined as an
 algebraic expression that is not dependent upon the indeterminate of the
@@ -935,7 +935,7 @@ whose coefficients are polynomials in <math xmlns="http://www.w3.org/1998/Math/M
 or not?  Furthermore, there are other ways to represent a polynomial—for
 example, as a product of factors, or (for a univariate polynomial) as the set
 of roots, or as a listing of the values of the polynomial at a specified set of
-points.<a class="footnote_link" id="DOCF121" href="#FOOT121"><sup>121</sup></a>  We can finesse these questions by
+points.<a class="footnote_link" id="DOCF123" href="#FOOT123"><sup>123</sup></a>  We can finesse these questions by
 deciding that in our algebraic-manipulation system a “polynomial” will be a
 particular syntactic form, not its underlying mathematical meaning.
 </p>
@@ -1038,7 +1038,7 @@ allow us to consider both terms and term lists as data abstractions, whose
 concrete representations we can worry about separately.
 </p>
 <p>Here is the procedure that constructs the term list for the sum of two
-polynomials:<a class="footnote_link" id="DOCF122" href="#FOOT122"><sup>122</sup></a>
+polynomials:<a class="footnote_link" id="DOCF124" href="#FOOT124"><sup>124</sup></a>
 </p>
 <div class="lisp">
 <pre class="lisp prettyprinted" style=""><span class="opn">(</span><span class="kwd">define</span><span class="pln"> </span><span class="opn">(</span><span class="pln">add-terms L1 L2</span><span class="clo">)</span><span class="pln">
@@ -1242,7 +1242,7 @@ which, for example, a call to <code>mul-poly</code> will result in recursive cal
 the coefficients were themselves polynomials (as might be used to represent
 polynomials in three variables), the data direction would ensure that the
 system would follow through another level of recursive calls, and so on through
-as many levels as the structure of the data dictates.<a class="footnote_link" id="DOCF123" href="#FOOT123"><sup>123</sup></a>
+as many levels as the structure of the data dictates.<a class="footnote_link" id="DOCF125" href="#FOOT125"><sup>125</sup></a>
 </p>
 <a id="Representing-term-lists"></a>
 <h5 class="subsubheading">Representing term lists</h5>
@@ -1326,7 +1326,7 @@ of the coefficients.  For example, <math xmlns="http://www.w3.org/1998/Math/Math
 </math> above would be nicely represented as
 <code>(1 2 0 3 -2 -5)</code>.  The order of a term in this representation is the
 length of the sublist beginning with that term’s coefficient, decremented by
-1.<a class="footnote_link" id="DOCF124" href="#FOOT124"><sup>124</sup></a>  This would be a terrible representation for
+1.<a class="footnote_link" id="DOCF126" href="#FOOT126"><sup>126</sup></a>  This would be a terrible representation for
 a sparse polynomial such as <math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>B</mi>
 </math>: There would be a giant list of zeros
@@ -1340,7 +1340,7 @@ that order.  In such a scheme, polynomial <math xmlns="http://www.w3.org/1998/Ma
 on sparse polynomials, we will use this method.  We will assume that term lists
 are represented as lists of terms, arranged from highest-order to lowest-order
 term.  Once we have made this decision, implementing the selectors and
-constructors for terms and term lists is straightforward:<a class="footnote_link" id="DOCF125" href="#FOOT125"><sup>125</sup></a>
+constructors for terms and term lists is straightforward:<a class="footnote_link" id="DOCF127" href="#FOOT127"><sup>127</sup></a>
 </p>
 <div class="lisp">
 <pre class="lisp prettyprinted" style=""><span class="opn">(</span><span class="kwd">define</span><span class="pln"> </span><span class="opn">(</span><span class="pln">adjoin-term term term-list</span><span class="clo">)</span><span class="pln">
@@ -1670,7 +1670,7 @@ with integers: modifying <code>make-rat</code> to divide both the numerator and 
 denominator by their greatest common divisor.  The notion of “greatest common
 divisor” makes sense for polynomials.  In fact, we can compute the
 <abbr>GCD</abbr> of two polynomials using essentially the same Euclid’s Algorithm
-that works for integers.<a class="footnote_link" id="DOCF126" href="#FOOT126"><sup>126</sup></a>  The integer version is
+that works for integers.<a class="footnote_link" id="DOCF128" href="#FOOT128"><sup>128</sup></a>  The integer version is
 </p>
 <div class="lisp">
 <pre class="lisp prettyprinted" style=""><span class="opn">(</span><span class="kwd">define</span><span class="pln"> </span><span class="opn">(</span><span class="pln">gcd a b</span><span class="clo">)</span><span class="pln">
@@ -1841,7 +1841,7 @@ Note that the answer is not the same as <math xmlns="http://www.w3.org/1998/Math
   </msub>
 </math>.  This example introduces
 noninteger operations into the computation, causing difficulties with the
-<abbr>GCD</abbr> algorithm.<a class="footnote_link" id="DOCF127" href="#FOOT127"><sup>127</sup></a>  To understand what is happening, try tracing
+<abbr>GCD</abbr> algorithm.<a class="footnote_link" id="DOCF129" href="#FOOT129"><sup>129</sup></a>  To understand what is happening, try tracing
 <code>gcd-terms</code> while computing the <abbr>GCD</abbr> or try performing the
 division by hand.
 </p></blockquote>
@@ -2041,21 +2041,21 @@ mathematically straightforward, is extremely slow.  The slowness is due partly
 to the large number of division operations and partly to the enormous size of
 the intermediate coefficients generated by the pseudodivisions.  One of the
 active areas in the development of algebraic-manipulation systems is the design
-of better algorithms for computing polynomial <abbr>GCD</abbr>s.<a class="footnote_link" id="DOCF128" href="#FOOT128"><sup>128</sup></a>
+of better algorithms for computing polynomial <abbr>GCD</abbr>s.<a class="footnote_link" id="DOCF130" href="#FOOT130"><sup>130</sup></a>
 </p>
 
 <div class="footnote">
 <h4 class="footnotes-heading">Footnotes</h4>
 
-<div id="FOOT115"><p><a class="footnote_backlink" href="#DOCF115"><sup>115</sup></a>
+<div id="FOOT117"><p><a class="footnote_backlink" href="#DOCF117"><sup>117</sup></a>
 We also have
 to supply an almost identical procedure to handle the types
 <code>(scheme-number complex)</code>.</p>
 </div>
-<div id="FOOT116"><p><a class="footnote_backlink" href="#DOCF116"><sup>116</sup></a>
+<div id="FOOT118"><p><a class="footnote_backlink" href="#DOCF118"><sup>118</sup></a>
 See <a href="#Exercise-2_002e82">Exercise 2.82</a> for generalizations.</p>
 </div>
-<div id="FOOT117"><p><a class="footnote_backlink" href="#DOCF117"><sup>117</sup></a>
+<div id="FOOT119"><p><a class="footnote_backlink" href="#DOCF119"><sup>119</sup></a>
 If we are clever, we can usually get by with fewer
 than <math xmlns="http://www.w3.org/1998/Math/MathML">
   <msup>
@@ -2071,7 +2071,7 @@ our system, we can have it search the “graph” of relations among types and
 automatically generate those coercion procedures that can be inferred from the
 ones that are supplied explicitly.</p>
 </div>
-<div id="FOOT118"><p><a class="footnote_backlink" href="#DOCF118"><sup>118</sup></a>
+<div id="FOOT120"><p><a class="footnote_backlink" href="#DOCF120"><sup>120</sup></a>
 This statement,
 which also appears in the first edition of this book, is just as true now as it
 was when we wrote it twelve years ago.  Developing a useful, general framework
@@ -2091,18 +2091,18 @@ chapter 3 about local state, but we do not even mention “classes” or
 addressed in terms of computer-language design alone, without also drawing on
 work in knowledge representation and automated reasoning.</p>
 </div>
-<div id="FOOT119"><p><a class="footnote_backlink" href="#DOCF119"><sup>119</sup></a>
+<div id="FOOT121"><p><a class="footnote_backlink" href="#DOCF121"><sup>121</sup></a>
 A real number can be projected to an integer using the
 <code>round</code> primitive, which returns the closest integer to its argument.</p>
 </div>
-<div id="FOOT120"><p><a class="footnote_backlink" href="#DOCF120"><sup>120</sup></a>
+<div id="FOOT122"><p><a class="footnote_backlink" href="#DOCF122"><sup>122</sup></a>
 On the other hand,
 we will allow polynomials whose coefficients are themselves polynomials in
 other variables.  This will give us essentially the same representational power
 as a full multivariate system, although it does lead to coercion problems, as
 discussed below.</p>
 </div>
-<div id="FOOT121"><p><a class="footnote_backlink" href="#DOCF121"><sup>121</sup></a>
+<div id="FOOT123"><p><a class="footnote_backlink" href="#DOCF123"><sup>123</sup></a>
 For univariate polynomials, giving the value of a polynomial
 at a given set of points can be a particularly good representation.  This makes
 polynomial arithmetic extremely simple.  To obtain, for example, the sum of two
@@ -2120,14 +2120,14 @@ the polynomial at <math xmlns="http://www.w3.org/1998/Math/MathML">
   </mrow>
 </math> points.</p>
 </div>
-<div id="FOOT122"><p><a class="footnote_backlink" href="#DOCF122"><sup>122</sup></a>
+<div id="FOOT124"><p><a class="footnote_backlink" href="#DOCF124"><sup>124</sup></a>
 This operation is very much like the ordered
 <code>union-set</code> operation we developed in <a href="2_002e3.xhtml#Exercise-2_002e62">Exercise 2.62</a>.  In
 fact, if we think of the terms of the polynomial as a set ordered according to
 the power of the indeterminate, then the program that produces the term list
 for a sum is almost identical to <code>union-set</code>.</p>
 </div>
-<div id="FOOT123"><p><a class="footnote_backlink" href="#DOCF123"><sup>123</sup></a>
+<div id="FOOT125"><p><a class="footnote_backlink" href="#DOCF125"><sup>125</sup></a>
 To make this
 work completely smoothly, we should also add to our generic arithmetic system
 the ability to coerce a “number” to a polynomial by regarding it as a
@@ -2175,14 +2175,14 @@ which requires adding the coefficient <math xmlns="http://www.w3.org/1998/Math/M
   </mrow>
 </math> to the coefficient 2.</p>
 </div>
-<div id="FOOT124"><p><a class="footnote_backlink" href="#DOCF124"><sup>124</sup></a>
+<div id="FOOT126"><p><a class="footnote_backlink" href="#DOCF126"><sup>126</sup></a>
 In these polynomial examples, we assume that we have implemented
 the generic arithmetic system using the type mechanism suggested in
 <a href="#Exercise-2_002e78">Exercise 2.78</a>.  Thus, coefficients that are ordinary numbers will be
 represented as the numbers themselves rather than as pairs whose <code>car</code> is
 the symbol <code>scheme-number</code>.</p>
 </div>
-<div id="FOOT125"><p><a class="footnote_backlink" href="#DOCF125"><sup>125</sup></a>
+<div id="FOOT127"><p><a class="footnote_backlink" href="#DOCF127"><sup>127</sup></a>
 Although we
 are assuming that term lists are ordered, we have implemented
 <code>adjoin-term</code> to simply <code>cons</code> the new term onto the existing term
@@ -2193,7 +2193,7 @@ guarantee, we could have implemented <code>adjoin-term</code> to be similar to t
 <code>adjoin-set</code> constructor for the ordered-list representation of sets
 (<a href="2_002e3.xhtml#Exercise-2_002e61">Exercise 2.61</a>).</p>
 </div>
-<div id="FOOT126"><p><a class="footnote_backlink" href="#DOCF126"><sup>126</sup></a>
+<div id="FOOT128"><p><a class="footnote_backlink" href="#DOCF128"><sup>128</sup></a>
 The fact that Euclid’s Algorithm works for
 polynomials is formalized in algebra by saying that polynomials form a kind of
 algebraic domain called a <a id="index-Euclidean-ring"></a>
@@ -2270,7 +2270,7 @@ integers, the measure <math xmlns="http://www.w3.org/1998/Math/MathML">
 itself.  For the domain of polynomials, the measure of a polynomial is its
 degree.</p>
 </div>
-<div id="FOOT127"><p><a class="footnote_backlink" href="#DOCF127"><sup>127</sup></a>
+<div id="FOOT129"><p><a class="footnote_backlink" href="#DOCF129"><sup>129</sup></a>
 In an implementation like <abbr>MIT</abbr>
 Scheme, this produces a polynomial that is indeed a divisor of <math xmlns="http://www.w3.org/1998/Math/MathML">
   <msub>
@@ -2287,7 +2287,7 @@ Scheme, this produces a polynomial that is indeed a divisor of <math xmlns="http
 which division of integers can produce limited-precision decimal numbers, we
 may fail to get a valid divisor.</p>
 </div>
-<div id="FOOT128"><p><a class="footnote_backlink" href="#DOCF128"><sup>128</sup></a>
+<div id="FOOT130"><p><a class="footnote_backlink" href="#DOCF130"><sup>130</sup></a>
 One
 extremely efficient and elegant method for computing polynomial <abbr>GCD</abbr>s
 was discovered by Richard <a href="References.xhtml#Zippel-_00281979_0029">Zippel (1979)</a>.  The method is a probabilistic

@@ -79,7 +79,7 @@ PR['registerLangHandler'](
          [PR['PR_STRING'],      /^\"(?:[^\"\\]|\\[\s\S])*(?:\"|$)/, null, '"']
         ],
         [
-         [PR['PR_KEYWORD'],     /^(?:and|begin|c[ad]+r|case|catch|con[ds]|def(?:ine|un)|delay|do|else|eq|equal|if|lambda|let(?:rec)?|or|(?:quasi|un)?quote(?:-splicing)?|set)\b(?!-)/, null],
+         [PR['PR_KEYWORD'],     /^(?:and|begin|c[ad]+r|case|catch|con[ds]|def(?:ine|un|n|)|delay|do|else|eq|equal|if|lambda|let(?:rec)?|or|(?:quasi|un)?quote(?:-splicing)?|set)\b(?!-)/, null],
          // For highlighting the 'error' keyword and angle brackets (A.R)
          [PR['PR_ERROR'],     /^error\b/, null],
          [PR['PR_LITERAL'],

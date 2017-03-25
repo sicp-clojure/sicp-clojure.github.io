@@ -195,7 +195,7 @@ names to refer to computational objects.  We say that the name identifies a
 <p>In the Scheme dialect of Lisp, we name things with <code>define</code>.  Typing
 </p>
 <div class="lisp">
-<pre class="lisp prettyprinted" style=""><span class="opn">(</span><span class="pln">def size </span><span class="lit">2</span><span class="clo">)</span></pre></div>
+<pre class="lisp prettyprinted" style=""><span class="opn">(</span><span class="kwd">def</span><span class="pln"> size </span><span class="lit">2</span><span class="clo">)</span></pre></div>
 
 <p>causes the interpreter to associate the value 2 with the name
 <code>size</code>.<a class="footnote_link" id="DOCF8" href="#FOOT8"><sup>8</sup></a> Once
@@ -213,13 +213,13 @@ value 2 by name:
 <p>Here are further examples of the use of <code>define</code>:
 </p>
 <div class="lisp">
-<pre class="lisp prettyprinted" style=""><span class="opn">(</span><span class="pln">def pi </span><span class="lit">3.14159</span><span class="clo">)</span><span class="pln">
-</span><span class="opn">(</span><span class="pln">def radius </span><span class="lit">10</span><span class="clo">)</span><span class="pln">
+<pre class="lisp prettyprinted" style=""><span class="opn">(</span><span class="kwd">def</span><span class="pln"> pi </span><span class="lit">3.14159</span><span class="clo">)</span><span class="pln">
+</span><span class="opn">(</span><span class="kwd">def</span><span class="pln"> radius </span><span class="lit">10</span><span class="clo">)</span><span class="pln">
 
 </span><span class="opn">(</span><span class="pun">*</span><span class="pln"> pi </span><span class="opn">(</span><span class="pun">*</span><span class="pln"> radius radius</span><span class="clo">))</span><span class="pln">
 </span><i><span class="lit">314.159</span></i><span class="pln">
 
-</span><span class="opn">(</span><span class="pln">def circumference </span><span class="opn">(</span><span class="pun">*</span><span class="pln"> </span><span class="lit">2</span><span class="pln"> pi radius</span><span class="clo">))</span><span class="pln">
+</span><span class="opn">(</span><span class="kwd">def</span><span class="pln"> circumference </span><span class="opn">(</span><span class="pun">*</span><span class="pln"> </span><span class="lit">2</span><span class="pln"> pi radius</span><span class="clo">))</span><span class="pln">
 
 circumference
 </span><i><span class="lit">62.8318</span></i>
@@ -378,7 +378,7 @@ then referred to as a unit.
 language as
 </p>
 <div class="lisp">
-<pre class="lisp prettyprinted" style=""><span class="opn">(</span><span class="pln">defn square </span><span class="pun">[</span><span class="pln">x</span><span class="pun">]</span><span class="pln"> </span><span class="opn">(</span><span class="pun">*</span><span class="pln"> x x</span><span class="clo">))</span></pre></div>
+<pre class="lisp prettyprinted" style=""><span class="opn">(</span><span class="kwd">defn</span><span class="pln"> square </span><span class="pun">[</span><span class="pln">x</span><span class="pun">]</span><span class="pln"> </span><span class="opn">(</span><span class="pun">*</span><span class="pln"> x x</span><span class="clo">))</span></pre></div>
 
 <p>We can understand this in the following way:
 </p>
@@ -399,7 +399,7 @@ definition creates this compound procedure and associates it with the name
 <p>The general form of a procedure definition is
 </p>
 <div class="lisp">
-<pre class="lisp prettyprinted" style=""><span class="opn">(</span><span class="pln">defn ⟨</span><var><span class="pln">name</span></var><span class="pln">⟩ </span><span class="pun">[</span><span class="pln">⟨</span><var><span class="pln">formal parameters</span></var><span class="pln">⟩</span><span class="pun">]</span><span class="pln"> ⟨</span><var><span class="pln">body</span></var><span class="pln">⟩</span><span class="clo">)</span></pre></div>
+<pre class="lisp prettyprinted" style=""><span class="opn">(</span><span class="kwd">defn</span><span class="pln"> ⟨</span><var><span class="pln">name</span></var><span class="pln">⟩ </span><span class="pun">[</span><span class="pln">⟨</span><var><span class="pln">formal parameters</span></var><span class="pln">⟩</span><span class="pun">]</span><span class="pln"> ⟨</span><var><span class="pln">body</span></var><span class="pln">⟩</span><span class="clo">)</span></pre></div>
 
 <p>The <code>⟨</code><var>name</var><code>⟩</code> is a symbol to be associated with the procedure definition in
 the environment.<a class="footnote_link" id="DOCF13" href="#FOOT13"><sup>13</sup></a> The <code>⟨</code><var>formal<!-- /@w --> parameters<!-- /@w --></var><code>⟩</code>
@@ -443,7 +443,7 @@ For example, <math xmlns="http://www.w3.org/1998/Math/MathML">
 numbers as arguments, produces the sum of their squares:
 </p>
 <div class="lisp">
-<pre class="lisp prettyprinted" style=""><span class="opn">(</span><span class="pln">defn sum-of-squares </span><span class="pun">[</span><span class="pln">x y</span><span class="pun">]</span><span class="pln">
+<pre class="lisp prettyprinted" style=""><span class="opn">(</span><span class="kwd">defn</span><span class="pln"> sum-of-squares </span><span class="pun">[</span><span class="pln">x y</span><span class="pun">]</span><span class="pln">
   </span><span class="opn">(</span><span class="pun">+</span><span class="pln"> </span><span class="opn">(</span><span class="pln">square x</span><span class="clo">)</span><span class="pln"> </span><span class="opn">(</span><span class="pln">square y</span><span class="clo">)))</span><span class="pln">
 
 </span><span class="opn">(</span><span class="pln">sum-of-squares </span><span class="lit">3</span><span class="pln"> </span><span class="lit">4</span><span class="clo">)</span><span class="pln">
@@ -454,7 +454,7 @@ numbers as arguments, produces the sum of their squares:
 further procedures:
 </p>
 <div class="lisp">
-<pre class="lisp prettyprinted" style=""><span class="opn">(</span><span class="pln">defn f </span><span class="pun">[</span><span class="pln">a</span><span class="pun">]</span><span class="pln">
+<pre class="lisp prettyprinted" style=""><span class="opn">(</span><span class="kwd">defn</span><span class="pln"> f </span><span class="pun">[</span><span class="pln">a</span><span class="pun">]</span><span class="pln">
   </span><span class="opn">(</span><span class="pln">sum-of-squares </span><span class="opn">(</span><span class="pun">+</span><span class="pln"> a </span><span class="lit">1</span><span class="clo">)</span><span class="pln"> </span><span class="opn">(</span><span class="pun">*</span><span class="pln"> a </span><span class="lit">2</span><span class="clo">)))</span><span class="pln">
 
 </span><span class="opn">(</span><span class="pln">f </span><span class="lit">5</span><span class="clo">)</span><span class="pln">
@@ -698,7 +698,7 @@ in Lisp for notating such a case analysis.  It is called <code>cond</code> (whic
 stands for “conditional”), and it is used as follows:
 </p>
 <div class="lisp">
-<pre class="lisp prettyprinted" style=""><span class="opn">(</span><span class="pln">defn abs </span><span class="pun">[</span><span class="pln">x</span><span class="pun">]</span><span class="pln">
+<pre class="lisp prettyprinted" style=""><span class="opn">(</span><span class="kwd">defn</span><span class="pln"> abs </span><span class="pun">[</span><span class="pln">x</span><span class="pun">]</span><span class="pln">
   </span><span class="opn">(</span><span class="kwd">cond</span><span class="pln">
     </span><span class="opn">(</span><span class="pun">&lt;</span><span class="pln"> x </span><span class="lit">0</span><span class="clo">)</span><span class="pln"> </span><span class="opn">(</span><span class="pun">-</span><span class="pln"> x</span><span class="clo">)</span><span class="pln">
     </span><span class="opn">(</span><span class="pun">=</span><span class="pln"> x </span><span class="lit">0</span><span class="clo">)</span><span class="pln"> </span><span class="lit">0</span><span class="pln">
@@ -794,7 +794,7 @@ number, returning true or false accordingly.
 <p>Another way to write the absolute-value procedure is
 </p>
 <div class="lisp">
-<pre class="lisp prettyprinted" style=""><span class="opn">(</span><span class="pln">defn abs </span><span class="pun">[</span><span class="pln">x</span><span class="pun">]</span><span class="pln">
+<pre class="lisp prettyprinted" style=""><span class="opn">(</span><span class="kwd">defn</span><span class="pln"> abs </span><span class="pun">[</span><span class="pln">x</span><span class="pun">]</span><span class="pln">
   </span><span class="opn">(</span><span class="kwd">cond</span><span class="pln">
     </span><span class="opn">(</span><span class="pun">&lt;</span><span class="pln"> x </span><span class="lit">0</span><span class="clo">)</span><span class="pln"> </span><span class="opn">(</span><span class="pun">-</span><span class="pln"> x</span><span class="clo">)</span><span class="pln">
     </span><span class="pun">:</span><span class="kwd">else</span><span class="pln"> x</span><span class="clo">))</span></pre></div>
@@ -837,7 +837,7 @@ here.
 <p>Here is yet another way to write the absolute-value procedure:
 </p>
 <div class="lisp">
-<pre class="lisp prettyprinted" style=""><span class="opn">(</span><span class="pln">defn abs </span><span class="pun">[</span><span class="pln">x</span><span class="pun">]</span><span class="pln">
+<pre class="lisp prettyprinted" style=""><span class="opn">(</span><span class="kwd">defn</span><span class="pln"> abs </span><span class="pun">[</span><span class="pln">x</span><span class="pun">]</span><span class="pln">
   </span><span class="opn">(</span><span class="kwd">if</span><span class="pln"> </span><span class="opn">(</span><span class="pun">&lt;</span><span class="pln"> x </span><span class="lit">0</span><span class="clo">)</span><span class="pln">
     </span><span class="opn">(</span><span class="pun">-</span><span class="pln"> x</span><span class="clo">)</span><span class="pln">
     x</span><span class="clo">))</span></pre></div>
@@ -905,13 +905,13 @@ the range <math xmlns="http://www.w3.org/1998/Math/MathML">
 greater than or equal to another as
 </p>
 <div class="lisp">
-<pre class="lisp prettyprinted" style=""><span class="opn">(</span><span class="pln">defn </span><span class="pun">&gt;=</span><span class="pln"> </span><span class="pun">[</span><span class="pln">x y</span><span class="pun">]</span><span class="pln">
+<pre class="lisp prettyprinted" style=""><span class="opn">(</span><span class="kwd">defn</span><span class="pln"> </span><span class="pun">&gt;=</span><span class="pln"> </span><span class="pun">[</span><span class="pln">x y</span><span class="pun">]</span><span class="pln">
   </span><span class="opn">(</span><span class="kwd">or</span><span class="pln"> </span><span class="opn">(</span><span class="pun">&gt;</span><span class="pln"> x y</span><span class="clo">)</span><span class="pln"> </span><span class="opn">(</span><span class="pun">=</span><span class="pln"> x y</span><span class="clo">)))</span></pre></div>
 
 <p>or alternatively as
 </p>
 <div class="lisp">
-<pre class="lisp prettyprinted" style=""><span class="opn">(</span><span class="pln">defn </span><span class="pun">&gt;=</span><span class="pln"> </span><span class="pun">[</span><span class="pln">x y</span><span class="pun">]</span><span class="pln">
+<pre class="lisp prettyprinted" style=""><span class="opn">(</span><span class="kwd">defn</span><span class="pln"> </span><span class="pun">&gt;=</span><span class="pln"> </span><span class="pun">[</span><span class="pln">x y</span><span class="pun">]</span><span class="pln">
   </span><span class="opn">(</span><span class="pln">not </span><span class="opn">(</span><span class="pun">&lt;</span><span class="pln"> x y</span><span class="clo">)))</span></pre></div>
 
 <blockquote>
@@ -926,8 +926,8 @@ presented.
 </span><span class="opn">(</span><span class="pun">-</span><span class="pln"> </span><span class="lit">9</span><span class="pln"> </span><span class="lit">1</span><span class="clo">)</span><span class="pln">
 </span><span class="opn">(</span><span class="pun">/</span><span class="pln"> </span><span class="lit">6</span><span class="pln"> </span><span class="lit">2</span><span class="clo">)</span><span class="pln">
 </span><span class="opn">(</span><span class="pun">+</span><span class="pln"> </span><span class="opn">(</span><span class="pun">*</span><span class="pln"> </span><span class="lit">2</span><span class="pln"> </span><span class="lit">4</span><span class="clo">)</span><span class="pln"> </span><span class="opn">(</span><span class="pun">-</span><span class="pln"> </span><span class="lit">4</span><span class="pln"> </span><span class="lit">6</span><span class="clo">))</span><span class="pln">
-</span><span class="opn">(</span><span class="pln">def a </span><span class="lit">3</span><span class="clo">)</span><span class="pln">
-</span><span class="opn">(</span><span class="pln">def b </span><span class="opn">(</span><span class="pun">+</span><span class="pln"> a </span><span class="lit">1</span><span class="clo">))</span><span class="pln">
+</span><span class="opn">(</span><span class="kwd">def</span><span class="pln"> a </span><span class="lit">3</span><span class="clo">)</span><span class="pln">
+</span><span class="opn">(</span><span class="kwd">def</span><span class="pln"> b </span><span class="opn">(</span><span class="pun">+</span><span class="pln"> a </span><span class="lit">1</span><span class="clo">))</span><span class="pln">
 </span><span class="opn">(</span><span class="pun">+</span><span class="pln"> a b </span><span class="opn">(</span><span class="pun">*</span><span class="pln"> a b</span><span class="clo">))</span><span class="pln">
 </span><span class="opn">(</span><span class="pun">=</span><span class="pln"> a b</span><span class="clo">)</span><span class="pln">
 </span><span class="opn">(</span><span class="kwd">if</span><span class="pln"> </span><span class="opn">(</span><span class="kwd">and</span><span class="pln"> </span><span class="opn">(</span><span class="pun">&gt;</span><span class="pln"> b a</span><span class="clo">)</span><span class="pln"> </span><span class="opn">(</span><span class="pun">&lt;</span><span class="pln"> b </span><span class="opn">(</span><span class="pun">*</span><span class="pln"> a b</span><span class="clo">)))</span><span class="pln">
@@ -1006,7 +1006,7 @@ evaluation allows for combinations whose operators are compound expressions.
 Use this observation to describe the behavior of the following procedure:
 </p>
 <div class="lisp">
-<pre class="lisp prettyprinted" style=""><span class="opn">(</span><span class="pln">defn a-plus-abs-b </span><span class="pun">[</span><span class="pln">a b</span><span class="pun">]</span><span class="pln">
+<pre class="lisp prettyprinted" style=""><span class="opn">(</span><span class="kwd">defn</span><span class="pln"> a-plus-abs-b </span><span class="pun">[</span><span class="pln">a b</span><span class="pun">]</span><span class="pln">
   </span><span class="opn">((</span><span class="kwd">if</span><span class="pln"> </span><span class="opn">(</span><span class="pun">&gt;</span><span class="pln"> b </span><span class="lit">0</span><span class="clo">)</span><span class="pln"> </span><span class="pun">+</span><span class="pln"> </span><span class="pun">-</span><span class="clo">)</span><span class="pln"> a b</span><span class="clo">))</span></pre></div>
 </blockquote>
 
@@ -1017,9 +1017,9 @@ applicative-order evaluation or normal-order evaluation.  He defines the
 following two procedures:
 </p>
 <div class="lisp">
-<pre class="lisp prettyprinted" style=""><span class="opn">(</span><span class="pln">def p p</span><span class="clo">)</span><span class="pln">
+<pre class="lisp prettyprinted" style=""><span class="opn">(</span><span class="kwd">def</span><span class="pln"> p p</span><span class="clo">)</span><span class="pln">
 
-</span><span class="opn">(</span><span class="pln">defn test </span><span class="pun">[</span><span class="pln">x y</span><span class="pun">]</span><span class="pln">
+</span><span class="opn">(</span><span class="kwd">defn</span><span class="pln"> test </span><span class="pun">[</span><span class="pln">x y</span><span class="pun">]</span><span class="pln">
   </span><span class="opn">(</span><span class="kwd">if</span><span class="pln"> </span><span class="opn">(</span><span class="pun">=</span><span class="pln"> x </span><span class="lit">0</span><span class="clo">)</span><span class="pln">
       </span><span class="lit">0</span><span class="pln">
       y</span><span class="clo">))</span></pre></div>
@@ -1101,7 +1101,7 @@ actually find the square root of a given number.  It will not help matters to
 rephrase this definition in pseudo-Lisp:
 </p>
 <div class="lisp">
-<pre class="lisp prettyprinted" style=""><span class="opn">(</span><span class="pln">defn sqrt </span><span class="pun">[</span><span class="pln">x</span><span class="pun">]</span><span class="pln">
+<pre class="lisp prettyprinted" style=""><span class="opn">(</span><span class="kwd">defn</span><span class="pln"> sqrt </span><span class="pun">[</span><span class="pln">x</span><span class="pun">]</span><span class="pln">
   </span><span class="opn">(</span><span class="pln">the y </span><span class="opn">(</span><span class="kwd">and</span><span class="pln"> </span><span class="opn">(</span><span class="pun">&gt;=</span><span class="pln"> y </span><span class="lit">0</span><span class="clo">)</span><span class="pln">
               </span><span class="opn">(</span><span class="pun">=</span><span class="pln"> </span><span class="opn">(</span><span class="pln">square y</span><span class="clo">)</span><span class="pln"> x</span><span class="clo">))))</span></pre></div>
 
@@ -1160,7 +1160,7 @@ done; if not, we must repeat the process with an improved guess.  We write this
 basic strategy as a procedure:
 </p>
 <div class="lisp">
-<pre class="lisp prettyprinted" style=""><span class="opn">(</span><span class="pln">defn sqrt-iter </span><span class="pun">[</span><span class="pln">guess x</span><span class="pun">]</span><span class="pln">
+<pre class="lisp prettyprinted" style=""><span class="opn">(</span><span class="kwd">defn</span><span class="pln"> sqrt-iter </span><span class="pun">[</span><span class="pln">guess x</span><span class="pun">]</span><span class="pln">
   </span><span class="opn">(</span><span class="kwd">if</span><span class="pln"> </span><span class="opn">(</span><span class="pln">good-enough? guess x</span><span class="clo">)</span><span class="pln">
     guess
     </span><span class="opn">(</span><span class="pln">sqrt-iter </span><span class="opn">(</span><span class="pln">improve guess x</span><span class="clo">)</span><span class="pln"> x</span><span class="clo">)))</span></pre></div>
@@ -1169,13 +1169,13 @@ basic strategy as a procedure:
 old guess:
 </p>
 <div class="lisp">
-<pre class="lisp prettyprinted" style=""><span class="opn">(</span><span class="pln">defn improve </span><span class="pun">[</span><span class="pln">guess x</span><span class="pun">]</span><span class="pln">
+<pre class="lisp prettyprinted" style=""><span class="opn">(</span><span class="kwd">defn</span><span class="pln"> improve </span><span class="pun">[</span><span class="pln">guess x</span><span class="pun">]</span><span class="pln">
   </span><span class="opn">(</span><span class="pln">average guess </span><span class="opn">(</span><span class="pun">/</span><span class="pln"> x guess</span><span class="clo">)))</span></pre></div>
 
 <p>where
 </p>
 <div class="lisp">
-<pre class="lisp prettyprinted" style=""><span class="opn">(</span><span class="pln">defn average </span><span class="pun">[</span><span class="pln">x y</span><span class="pun">]</span><span class="pln">
+<pre class="lisp prettyprinted" style=""><span class="opn">(</span><span class="kwd">defn</span><span class="pln"> average </span><span class="pun">[</span><span class="pln">x y</span><span class="pun">]</span><span class="pln">
   </span><span class="opn">(</span><span class="pun">/</span><span class="pln"> </span><span class="opn">(</span><span class="pun">+</span><span class="pln"> x y</span><span class="clo">)</span><span class="pln"> </span><span class="lit">2</span><span class="clo">))</span></pre></div>
 
 <p>We also have to say what we mean by “good enough.”  The following will do for
@@ -1185,14 +1185,14 @@ enough so that its square differs from the radicand by less than a
 predetermined tolerance (here 0.001):<a class="footnote_link" id="DOCF22" href="#FOOT22"><sup>22</sup></a>
 </p>
 <div class="lisp">
-<pre class="lisp prettyprinted" style=""><span class="opn">(</span><span class="pln">defn good-enough? </span><span class="pun">[</span><span class="pln">guess x</span><span class="pun">]</span><span class="pln">
+<pre class="lisp prettyprinted" style=""><span class="opn">(</span><span class="kwd">defn</span><span class="pln"> good-enough? </span><span class="pun">[</span><span class="pln">guess x</span><span class="pun">]</span><span class="pln">
   </span><span class="opn">(</span><span class="pun">&lt;</span><span class="pln"> </span><span class="opn">(</span><span class="pln">abs </span><span class="opn">(</span><span class="pun">-</span><span class="pln"> </span><span class="opn">(</span><span class="pln">square guess</span><span class="clo">)</span><span class="pln"> x</span><span class="clo">))</span><span class="pln"> </span><span class="lit">0.001</span><span class="clo">))</span></pre></div>
 
 <p>Finally, we need a way to get started.  For instance, we can always guess that
 the square root of any number is 1:<a class="footnote_link" id="DOCF23" href="#FOOT23"><sup>23</sup></a>
 </p>
 <div class="lisp">
-<pre class="lisp prettyprinted" style=""><span class="opn">(</span><span class="pln">defn sqrt </span><span class="pun">[</span><span class="pln">x</span><span class="pun">]</span><span class="pln">
+<pre class="lisp prettyprinted" style=""><span class="opn">(</span><span class="kwd">defn</span><span class="pln"> sqrt </span><span class="pun">[</span><span class="pln">x</span><span class="pun">]</span><span class="pln">
   </span><span class="opn">(</span><span class="pln">sqrt-iter </span><span class="lit">1.0</span><span class="pln"> x</span><span class="clo">))</span></pre></div>
 
 <p>If we type these definitions to the interpreter, we can use <code>sqrt</code> just as
@@ -1228,7 +1228,7 @@ Eva Lu Ator claims this can indeed be done, and she defines a new version of
 <code>if</code>:
 </p>
 <div class="lisp">
-<pre class="lisp prettyprinted" style=""><span class="opn">(</span><span class="pln">defn new-if </span><span class="pun">[</span><span class="pln">predicate then-clause else-clause</span><span class="pun">]</span><span class="pln">
+<pre class="lisp prettyprinted" style=""><span class="opn">(</span><span class="kwd">defn</span><span class="pln"> new-if </span><span class="pun">[</span><span class="pln">predicate then-clause else-clause</span><span class="pun">]</span><span class="pln">
   </span><span class="opn">(</span><span class="kwd">cond</span><span class="pln">
     predicate then-clause
     </span><span class="pun">:</span><span class="kwd">else</span><span class="pln"> else-clause</span><span class="clo">))</span></pre></div>
@@ -1246,7 +1246,7 @@ Eva Lu Ator claims this can indeed be done, and she defines a new version of
 <p>Delighted, Alyssa uses <code>new-if</code> to rewrite the square-root program:
 </p>
 <div class="lisp">
-<pre class="lisp prettyprinted" style=""><span class="opn">(</span><span class="pln">defn sqrt-iter </span><span class="pun">[</span><span class="pln">guess x</span><span class="pun">]</span><span class="pln">
+<pre class="lisp prettyprinted" style=""><span class="opn">(</span><span class="kwd">defn</span><span class="pln"> sqrt-iter </span><span class="pun">[</span><span class="pln">guess x</span><span class="pun">]</span><span class="pln">
   </span><span class="opn">(</span><span class="pln">new-if </span><span class="opn">(</span><span class="pln">good-enough? guess x</span><span class="clo">)</span><span class="pln">
     guess
     </span><span class="opn">(</span><span class="pln">sqrt-iter </span><span class="opn">(</span><span class="pln">improve guess x</span><span class="clo">)</span><span class="pln"> x</span><span class="clo">)))</span></pre></div>
@@ -1358,12 +1358,12 @@ squaring a number should be indistinguishable.  Each takes a numerical argument
 and produces the square of that number as the value.<a class="footnote_link" id="DOCF25" href="#FOOT25"><sup>25</sup></a>
 </p>
 <div class="lisp">
-<pre class="lisp prettyprinted" style=""><span class="opn">(</span><span class="pln">defn square </span><span class="pun">[</span><span class="pln">x</span><span class="pun">]</span><span class="pln"> </span><span class="opn">(</span><span class="pun">*</span><span class="pln"> x x</span><span class="clo">))</span><span class="pln">
+<pre class="lisp prettyprinted" style=""><span class="opn">(</span><span class="kwd">defn</span><span class="pln"> square </span><span class="pun">[</span><span class="pln">x</span><span class="pun">]</span><span class="pln"> </span><span class="opn">(</span><span class="pun">*</span><span class="pln"> x x</span><span class="clo">))</span><span class="pln">
 
-</span><span class="opn">(</span><span class="pln">defn square </span><span class="pun">[</span><span class="pln">x</span><span class="pun">]</span><span class="pln">
+</span><span class="opn">(</span><span class="kwd">defn</span><span class="pln"> square </span><span class="pun">[</span><span class="pln">x</span><span class="pun">]</span><span class="pln">
   </span><span class="opn">(</span><span class="pln">exp </span><span class="opn">(</span><span class="pln">double </span><span class="opn">(</span><span class="pln">log x</span><span class="clo">))))</span><span class="pln">
 
-</span><span class="opn">(</span><span class="pln">defn double </span><span class="pun">[</span><span class="pln">x</span><span class="pun">]</span><span class="pln"> </span><span class="opn">(</span><span class="pun">+</span><span class="pln"> x x</span><span class="clo">))</span></pre></div>
+</span><span class="opn">(</span><span class="kwd">defn</span><span class="pln"> double </span><span class="pun">[</span><span class="pln">x</span><span class="pun">]</span><span class="pln"> </span><span class="opn">(</span><span class="pun">+</span><span class="pln"> x x</span><span class="clo">))</span></pre></div>
 
 <p>So a procedure definition should be able to suppress detail.  The users of the
 procedure may not have written the procedure themselves, but may have obtained
@@ -1379,8 +1379,8 @@ formal parameters.  Thus, the following procedures should not be
 distinguishable:
 </p>
 <div class="lisp">
-<pre class="lisp prettyprinted" style=""><span class="opn">(</span><span class="pln">defn square </span><span class="pun">[</span><span class="pln">x</span><span class="pun">]</span><span class="pln"> </span><span class="opn">(</span><span class="pun">*</span><span class="pln"> x x</span><span class="clo">))</span><span class="pln">
-</span><span class="opn">(</span><span class="pln">defn square </span><span class="pun">[</span><span class="pln">y</span><span class="pun">]</span><span class="pln"> </span><span class="opn">(</span><span class="pun">*</span><span class="pln"> y y</span><span class="clo">))</span></pre></div>
+<pre class="lisp prettyprinted" style=""><span class="opn">(</span><span class="kwd">defn</span><span class="pln"> square </span><span class="pun">[</span><span class="pln">x</span><span class="pun">]</span><span class="pln"> </span><span class="opn">(</span><span class="pun">*</span><span class="pln"> x x</span><span class="clo">))</span><span class="pln">
+</span><span class="opn">(</span><span class="kwd">defn</span><span class="pln"> square </span><span class="pun">[</span><span class="pln">y</span><span class="pun">]</span><span class="pln"> </span><span class="opn">(</span><span class="pun">*</span><span class="pln"> y y</span><span class="clo">))</span></pre></div>
 
 <p>This principle—that the meaning of a procedure should be independent of the
 parameter names used by its author—seems on the surface to be self-evident,
@@ -1390,7 +1390,7 @@ example, we used <code>square</code> in the definition of <code>good-enough?</co
 square-root procedure:
 </p>
 <div class="lisp">
-<pre class="lisp prettyprinted" style=""><span class="opn">(</span><span class="pln">defn good-enough? </span><span class="pun">[</span><span class="pln">guess x</span><span class="pun">]</span><span class="pln">
+<pre class="lisp prettyprinted" style=""><span class="opn">(</span><span class="kwd">defn</span><span class="pln"> good-enough? </span><span class="pun">[</span><span class="pln">guess x</span><span class="pun">]</span><span class="pln">
   </span><span class="opn">(</span><span class="pun">&lt;</span><span class="pln"> </span><span class="opn">(</span><span class="pln">abs </span><span class="opn">(</span><span class="pun">-</span><span class="pln"> </span><span class="opn">(</span><span class="pln">square guess</span><span class="clo">)</span><span class="pln"> x</span><span class="clo">))</span><span class="pln"> </span><span class="lit">0.001</span><span class="clo">))</span></pre></div>
 
 <p>The intention of the author of <code>good-enough?</code> is to determine if the
@@ -1449,18 +1449,18 @@ square-root program illustrates another way in which we would like to control
 the use of names.  The existing program consists of separate procedures:
 </p>
 <div class="lisp">
-<pre class="lisp prettyprinted" style=""><span class="opn">(</span><span class="pln">defn sqrt </span><span class="pun">[</span><span class="pln">x</span><span class="pun">]</span><span class="pln">
+<pre class="lisp prettyprinted" style=""><span class="opn">(</span><span class="kwd">defn</span><span class="pln"> sqrt </span><span class="pun">[</span><span class="pln">x</span><span class="pun">]</span><span class="pln">
   </span><span class="opn">(</span><span class="pln">sqrt-iter </span><span class="lit">1.0</span><span class="pln"> x</span><span class="clo">))</span><span class="pln">
 
-</span><span class="opn">(</span><span class="pln">defn sqrt-iter </span><span class="pun">[</span><span class="pln">guess x</span><span class="pun">]</span><span class="pln">
+</span><span class="opn">(</span><span class="kwd">defn</span><span class="pln"> sqrt-iter </span><span class="pun">[</span><span class="pln">guess x</span><span class="pun">]</span><span class="pln">
   </span><span class="opn">(</span><span class="kwd">if</span><span class="pln"> </span><span class="opn">(</span><span class="pln">good-enough? guess x</span><span class="clo">)</span><span class="pln">
     guess
     </span><span class="opn">(</span><span class="pln">sqrt-iter </span><span class="opn">(</span><span class="pln">improve guess x</span><span class="clo">)</span><span class="pln"> x</span><span class="clo">)))</span><span class="pln">
 
-</span><span class="opn">(</span><span class="pln">defn good-enough? </span><span class="pun">[</span><span class="pln">guess x</span><span class="pun">]</span><span class="pln">
+</span><span class="opn">(</span><span class="kwd">defn</span><span class="pln"> good-enough? </span><span class="pun">[</span><span class="pln">guess x</span><span class="pun">]</span><span class="pln">
   </span><span class="opn">(</span><span class="pun">&lt;</span><span class="pln"> </span><span class="opn">(</span><span class="pln">abs </span><span class="opn">(</span><span class="pun">-</span><span class="pln"> </span><span class="opn">(</span><span class="pln">square guess</span><span class="clo">)</span><span class="pln"> x</span><span class="clo">))</span><span class="pln"> </span><span class="lit">0.001</span><span class="clo">))</span><span class="pln">
 
-</span><span class="opn">(</span><span class="pln">defn improve </span><span class="pun">[</span><span class="pln">guess x</span><span class="pun">]</span><span class="pln">
+</span><span class="opn">(</span><span class="kwd">defn</span><span class="pln"> improve </span><span class="pun">[</span><span class="pln">guess x</span><span class="pun">]</span><span class="pln">
   </span><span class="opn">(</span><span class="pln">average guess </span><span class="opn">(</span><span class="pun">/</span><span class="pln"> x guess</span><span class="clo">)))</span></pre></div>
 
 <p>The problem with this program is that the only procedure that is important to
@@ -1480,12 +1480,12 @@ procedure to have internal definitions that are local to that procedure.  For
 example, in the square-root problem we can write
 </p>
 <div class="lisp">
-<pre class="lisp prettyprinted" style=""><span class="opn">(</span><span class="pln">defn sqrt </span><span class="pun">[</span><span class="pln">x</span><span class="pun">]</span><span class="pln">
-  </span><span class="opn">(</span><span class="pln">defn good-enough? </span><span class="pun">[</span><span class="pln">guess x</span><span class="pun">]</span><span class="pln">
+<pre class="lisp prettyprinted" style=""><span class="opn">(</span><span class="kwd">defn</span><span class="pln"> sqrt </span><span class="pun">[</span><span class="pln">x</span><span class="pun">]</span><span class="pln">
+  </span><span class="opn">(</span><span class="kwd">defn</span><span class="pln"> good-enough? </span><span class="pun">[</span><span class="pln">guess x</span><span class="pun">]</span><span class="pln">
     </span><span class="opn">(</span><span class="pun">&lt;</span><span class="pln"> </span><span class="opn">(</span><span class="pln">abs </span><span class="opn">(</span><span class="pun">-</span><span class="pln"> </span><span class="opn">(</span><span class="pln">square guess</span><span class="clo">)</span><span class="pln"> x</span><span class="clo">))</span><span class="pln"> </span><span class="lit">0.0001</span><span class="clo">))</span><span class="pln">
-  </span><span class="opn">(</span><span class="pln">defn improve </span><span class="pun">[</span><span class="pln">guess x</span><span class="pun">]</span><span class="pln">
+  </span><span class="opn">(</span><span class="kwd">defn</span><span class="pln"> improve </span><span class="pun">[</span><span class="pln">guess x</span><span class="pun">]</span><span class="pln">
     </span><span class="opn">(</span><span class="pln">average guess </span><span class="opn">(</span><span class="pun">/</span><span class="pln"> x guess</span><span class="clo">)))</span><span class="pln">
-  </span><span class="opn">(</span><span class="pln">defn sqrt-iter </span><span class="pun">[</span><span class="pln">guess x</span><span class="pun">]</span><span class="pln">
+  </span><span class="opn">(</span><span class="kwd">defn</span><span class="pln"> sqrt-iter </span><span class="pun">[</span><span class="pln">guess x</span><span class="pun">]</span><span class="pln">
     </span><span class="opn">(</span><span class="kwd">if</span><span class="pln"> </span><span class="opn">(</span><span class="pln">good-enough? guess x</span><span class="clo">)</span><span class="pln">
       guess
       </span><span class="opn">(</span><span class="pln">sqrt-iter </span><span class="opn">(</span><span class="pln">improve guess x</span><span class="clo">)</span><span class="pln"> x</span><span class="clo">)))</span><span class="pln">
@@ -1506,12 +1506,12 @@ discipline is called <a id="index-lexical-scoping"></a>
 <em>lexical scoping</em>.<a class="footnote_link" id="DOCF27" href="#FOOT27"><sup>27</sup></a>
 </p>
 <div class="lisp">
-<pre class="lisp prettyprinted" style=""><span class="opn">(</span><span class="pln">defn sqrt </span><span class="pun">[</span><span class="pln">x</span><span class="pun">]</span><span class="pln">
-  </span><span class="opn">(</span><span class="pln">defn good-enough? </span><span class="pun">[</span><span class="pln">guess</span><span class="pun">]</span><span class="pln">
+<pre class="lisp prettyprinted" style=""><span class="opn">(</span><span class="kwd">defn</span><span class="pln"> sqrt </span><span class="pun">[</span><span class="pln">x</span><span class="pun">]</span><span class="pln">
+  </span><span class="opn">(</span><span class="kwd">defn</span><span class="pln"> good-enough? </span><span class="pun">[</span><span class="pln">guess</span><span class="pun">]</span><span class="pln">
     </span><span class="opn">(</span><span class="pun">&lt;</span><span class="pln"> </span><span class="opn">(</span><span class="pln">abs </span><span class="opn">(</span><span class="pun">-</span><span class="pln"> </span><span class="opn">(</span><span class="pln">square guess</span><span class="clo">)</span><span class="pln"> x</span><span class="clo">))</span><span class="pln"> </span><span class="lit">0.0001</span><span class="clo">))</span><span class="pln">
-  </span><span class="opn">(</span><span class="pln">defn improve </span><span class="pun">[</span><span class="pln">guess</span><span class="pun">]</span><span class="pln">
+  </span><span class="opn">(</span><span class="kwd">defn</span><span class="pln"> improve </span><span class="pun">[</span><span class="pln">guess</span><span class="pun">]</span><span class="pln">
     </span><span class="opn">(</span><span class="pln">average guess </span><span class="opn">(</span><span class="pun">/</span><span class="pln"> x guess</span><span class="clo">)))</span><span class="pln">
-  </span><span class="opn">(</span><span class="pln">defn sqrt-iter </span><span class="pun">[</span><span class="pln">guess</span><span class="pun">]</span><span class="pln">
+  </span><span class="opn">(</span><span class="kwd">defn</span><span class="pln"> sqrt-iter </span><span class="pun">[</span><span class="pln">guess</span><span class="pun">]</span><span class="pln">
     </span><span class="opn">(</span><span class="kwd">if</span><span class="pln"> </span><span class="opn">(</span><span class="pln">good-enough? guess</span><span class="clo">)</span><span class="pln">
       guess
       </span><span class="opn">(</span><span class="pln">sqrt-iter </span><span class="opn">(</span><span class="pln">improve guess</span><span class="clo">))))</span><span class="pln">
