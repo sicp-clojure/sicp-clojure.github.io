@@ -1,8 +1,5 @@
 #!/bin/bash
 
-echo $0
-echo `dirname $0`
-
 PROJECT_HOME=`dirname $0`/../..
 TARGET_HOME=$PROJECT_HOME/sicp-clojure.github.io
 

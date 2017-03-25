@@ -6,6 +6,6 @@
 <p>Build date: DATE</p>
 <p>Build time: TIME</p>
 <p><a href="index.xhtml">HTML Content</a></p>
-<p><a href="sicpDATE.epub">EPUB Content</a></p>
+<p><a href="sicp-DATE.epub">EPUB Content</a></p>
 </body>
 </html>
